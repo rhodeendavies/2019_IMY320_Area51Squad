@@ -15,24 +15,40 @@ html, body{
 }
 
 /* split */
-
+#split{
+	background-color: #c5b8e6;
+}
 
 /* the friend circle */
-
+#friendCircle{
+	background-color: #0b0022;
+}
 
 /* infographic */
-
+#infographic{
+	background-color: #aed7d3;
+}
 
 /* lyric videos */
 
 
 /* heaven */
-
+#heaven{
+	background-color: #e8aab5;
+}
 
 /* mama */
-
+#mama{
+	background-color: #3c0000;
+}
 
 /* hopman brewery */
-
+#hopman{
+	background-color: #e6f7ca;
+}
 
 /* contact page */
+#contact{
+	background-color: #202321;
+}
+
