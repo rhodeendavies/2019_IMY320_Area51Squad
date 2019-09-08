@@ -32,22 +32,25 @@
 
 /* general style */
 
-html, body{
+html, body
+{
 	height: 100%;
 }
 
-.page{
+.page
+{
 	width: 100%; 
 	height: 100%;
 }
 
 /* landing page */
-#landing{
+#landing
+{
 	background-color: #202321;
 }
 
 
-#guac_title
+#guacTitle
 {
 	color: #f9f9f9;
 	font-family: HeroLight;
@@ -63,16 +66,17 @@ html, body{
 
 
 /* split */
-#split{
+#split
+{
 	background-color: #c5b8e6;
 }
 
 
-#split_title
+#splitTitle
 {
 	color: black;
-	font-family: GeoSans;
-	font-size: 140px;
+	font-family: HeroLight/*GeoSans*/;
+	font-size: 130px;
 	position: relative;
 	display: block;
 	margin-left: auto;
@@ -82,16 +86,54 @@ html, body{
 }
 
 
+#split h2
+{
+	color: #f9f9f9;
+	font-family: HeroLight/*GeoSans*/;
+	font-size: 40px;
+	background-color: #3e7089;
+	width: 220px;
+	text-align: center;
+	padding: 5px;
+}
+
+
+#splitAbout
+{
+	position: relative;
+
+	top: 6%;
+	left: 24%;
+}
+
+
+#splitTeam
+{
+	position: absolute;
+	top: 125%;
+	left: 64%;
+}
+
+
+#splitGallery
+{
+	position: relative;
+	top: 32%;
+	left: 13%;
+}
+
+
 /* the friend circle */
-#friendCircle{
+#friendCircle
+{
 	background-color: #0b0022;
 }
 
 
-#film_title
+#filmTitle
 {
 	color: #f9f9f9;
-	font-family: OpenSans;
+	font-family: HeroLight/*OpenSans*/;
 	font-size: 80px;
 	position: relative;
 	display: block;
@@ -102,16 +144,50 @@ html, body{
 }
 
 
+#friendCircle h2
+{
+	color: #cccccc;
+	font-family: HeroLight/*OpenSans*/;
+	/*background-color: white;*/
+	width: 100px;
+	text-align: center;
+}
+
+
+#friendAbout
+{
+	position: relative;
+	top: 45%;
+	left: 17%;
+}
+
+
+#friendTrailer
+{
+	position: relative;
+	top: 55%;
+	left: 73%;
+}
+
+
+#friendTeam
+{
+	position: relative;
+	left: 80%;
+}
+
+
 /* infographic */
-#infographic{
+#infographic
+{
 	background-color: #aed7d3;
 }
 
 
-#infographic_title
+#infographicTitle
 {
 	color: #1f2521;
-	font-family: DKLemonYellowSun;
+	font-family: HeroLight/*DKLemonYellowSun*/;
 	font-size: 80px;
 	text-align: center;
 	position: relative;
@@ -119,7 +195,31 @@ html, body{
 	margin-left: auto;
 	margin-right: auto;
 	top: 8%;
-	width: 500px;
+	width: 850px;
+	/*background-color: white;*/
+}
+
+
+#infographic h2
+{
+	color: #1f2521;
+	font-family: HeroLight/*DKLemonYellowSun*/;
+}
+
+
+#infographicAbout
+{
+	position: relative;
+	top: 15%;
+	left: 12%;
+}
+
+
+#infographicTeam
+{
+	position: relative;
+	top: 10%;
+	left: 76%;
 }
 
 
@@ -127,15 +227,20 @@ html, body{
 
 
 /* heaven */
-#heaven{
+#heaven
+{
 	background-color: #e8aab5;
+	position: relative;
+	width: 50%;
+	height: 100%;
+	display: inline-block;
 }
 
 
-#heaven_title
+#heavenTitle
 {
 	color: #fcfcfb;
-	font-family: Arial;
+	font-family: HeroLight;
 	font-size: 100px;
 	text-align: center;
 	position: relative;
@@ -148,16 +253,21 @@ html, body{
 
 
 /* mama */
-#mama{
+#mama
+{
 	background-color: #3c0000;
+	position: relative;
+	width: 50%;
+	height: 100%; 
+	float: right;
 }
 
 
-#mama_title
+#mamaTitle
 {
 	color: #fcfcfb;
-	font-family: Sardonyx;
-	font-size: 130px;
+	font-family: HeroLight;
+	font-size: 100px;
 	text-align: center;
 	position: relative;
 	display: block;
@@ -169,12 +279,13 @@ html, body{
 
 
 /* hopman brewery */
-#hopman{
+#hopman
+{
 	background-color: #e6f7ca;
 }
 
 
-#hopman_title
+#hopmanTitle
 {
 	color: #1a1a1a;
 	font-family: GeoSans;
@@ -190,7 +301,8 @@ html, body{
 
 
 /* contact page */
-#contact{
+#contact
+{
 	background-color: #202321;
 }
 
