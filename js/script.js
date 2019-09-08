@@ -1,5 +1,4 @@
 $(()=>{
-
 	function isInViewport(el) {
 		var elementTop = $(el).offset().top;
 		var elementBottom = elementTop + $(el).outerHeight();

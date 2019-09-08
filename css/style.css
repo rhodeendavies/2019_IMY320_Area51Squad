@@ -1,3 +1,35 @@
+/* fonts */
+
+@font-face
+{
+	font-family: 'DKLemonYellowSun';
+	src: url('../fonts/DK_Lemon_Yellow_Sun.otf');
+}
+
+@font-face
+{
+	font-family: 'GeoSans';
+	src: url('../fonts/Geosans_Light.ttf');
+}
+
+@font-face
+{
+	font-family: 'HeroLight';
+	src: url('../fonts/Hero_Light.otf');
+}
+
+@font-face
+{
+	font-family: 'OpenSans';
+	src: url('../fonts/Opensans_Light.ttf');
+}
+
+@font-face
+{
+	font-family: 'Sardonyx';
+	src: url('../fonts/Sardonyx.otf');
+}
+
 /* general style */
 
 html, body{
@@ -14,20 +46,82 @@ html, body{
 	background-color: #202321;
 }
 
+
+#guac_title
+{
+	color: #f9f9f9;
+	font-family: HeroLight;
+	font-size: 200px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 33%;
+	width: 500px;
+	
+}
+
+
 /* split */
 #split{
 	background-color: #c5b8e6;
 }
+
+
+#split_title
+{
+	color: black;
+	font-family: GeoSans;
+	font-size: 140px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 4%;
+	width: 350px;
+}
+
 
 /* the friend circle */
 #friendCircle{
 	background-color: #0b0022;
 }
 
+
+#film_title
+{
+	color: #f9f9f9;
+	font-family: OpenSans;
+	font-size: 80px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 7%;
+	width: 750px;
+}
+
+
 /* infographic */
 #infographic{
 	background-color: #aed7d3;
 }
+
+
+#infographic_title
+{
+	color: #1f2521;
+	font-family: DKLemonYellowSun;
+	font-size: 80px;
+	text-align: center;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 8%;
+	width: 500px;
+}
+
 
 /* lyric videos */
 
@@ -37,15 +131,63 @@ html, body{
 	background-color: #e8aab5;
 }
 
+
+#heaven_title
+{
+	color: #fcfcfb;
+	font-family: Arial;
+	font-size: 100px;
+	text-align: center;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 8%;
+	width: 500px;
+}
+
+
 /* mama */
 #mama{
 	background-color: #3c0000;
 }
 
+
+#mama_title
+{
+	color: #fcfcfb;
+	font-family: Sardonyx;
+	font-size: 130px;
+	text-align: center;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 8%;
+	width: 500px;
+}
+
+
 /* hopman brewery */
 #hopman{
 	background-color: #e6f7ca;
 }
+
+
+#hopman_title
+{
+	color: #1a1a1a;
+	font-family: GeoSans;
+	font-size: 100px;
+	text-align: center;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 5%;
+	width: 700px;
+}
+
 
 /* contact page */
 #contact{
