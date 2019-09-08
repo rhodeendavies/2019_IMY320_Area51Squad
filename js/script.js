@@ -77,13 +77,7 @@ var con = document.getElementById("contact").id;
 if(con == "contact")
 {	
 	$("html").append(
-	   "<style>html, body, .msty_notcur {cursor:none !important;}.cursor {z-index:10000000000000; position: fixed;background-color:rgba(255,0,0,0.4);border: 3px solid rgba(255,255,255,0.4);width:30px;height:30px;border-radius:100%;transform:translate(-50%,-50%);top:0px;left:0px;pointer-events:none;} .overlink {background-color:rgba(255,100,100,0.1) !important;border: 1px solid rgba(100,0,0,0.25) !important;} .overtext {background-color:rgba(100,100,255,0.25) !important;border: 1px solid rgba(0,0,100,0.25) !important;}</style>"
-	);
-}
-else if(land == "landing")
-{
-	$("html").append(
-	   "<style>html, body, .msty_notcur {cursor:none !important;}.cursor {z-index:10000000000000; position: fixed;background-color:rgba(255,255,255,0.4);border: 3px solid rgba(255,255,255,0.4);width:30px;height:30px;border-radius:100%;transform:translate(-50%,-50%);top:0px;left:0px;pointer-events:none;} .overlink {background-color:rgba(255,100,100,0.1) !important;border: 1px solid rgba(100,0,0,0.25) !important;} .overtext {background-color:rgba(100,100,255,0.25) !important;border: 1px solid rgba(0,0,100,0.25) !important;}</style>"
+	   "<style>html, body, .msty_notcur {cursor:none !important;}.cursor {z-index:10000000000000; position: fixed;background-color:rgba(255,0,0,0.4);border: 3px solid rgba(255,255,255,0.4);width:30px;height:30px;border-radius:100%;transform:translate(-50%,-50%); transition: background-color 3s; top:0px;left:0px;pointer-events:none; transition: background-color 3s;} .overlink {background-color:rgba(255,100,100,0.1) !important;border: 2px solid rgba(255,255,255,0.25) !important; transition: background-color 3s;} .overtext {background-color:rgba(255,0,0,0.25) !important;border: 2px solid rgba(255,255,255,0.2) !important; transition: background-color 3s;}</style>"
 	);
 }
 var scrollY = 0,
