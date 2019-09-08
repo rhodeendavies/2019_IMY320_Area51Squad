@@ -50,5 +50,8 @@ html, body{
 /* contact page */
 #contact{
 	background-color: #202321;
+	color: white;
+	text-align: center;
+	padding-top: 60px;
 }
 
