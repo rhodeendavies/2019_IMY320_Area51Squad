@@ -35,6 +35,7 @@
 html, body
 {
 	height: 100%;
+	overflow-x:hidden;
 }
 
 .page
@@ -75,21 +76,22 @@ html, body
 #splitTitle
 {
 	color: black;
-	font-family: HeroLight/*GeoSans*/;
-	font-size: 130px;
+	font-family: HeroLight;
+	font-size: 80px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 4%;
-	width: 350px;
+	top: 3%;
+	width: 300px;
+	text-align: center;
 }
 
 
 #split h2
 {
 	color: #f9f9f9;
-	font-family: HeroLight/*GeoSans*/;
+	font-family: HeroLight;
 	font-size: 40px;
 	background-color: #3e7089;
 	width: 220px;
@@ -101,7 +103,6 @@ html, body
 #splitAbout
 {
 	position: relative;
-
 	top: 6%;
 	left: 24%;
 }
@@ -109,8 +110,8 @@ html, body
 
 #splitTeam
 {
-	position: absolute;
-	top: 125%;
+	position: relative;
+	top: -10%;
 	left: 64%;
 }
 
@@ -133,23 +134,21 @@ html, body
 #filmTitle
 {
 	color: #f9f9f9;
-	font-family: HeroLight/*OpenSans*/;
+	font-family: HeroLight;
 	font-size: 80px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 7%;
-	width: 750px;
+	top: 3%;	
+	text-align: center;
 }
 
 
 #friendCircle h2
 {
 	color: #cccccc;
-	font-family: HeroLight/*OpenSans*/;
-	/*background-color: white;*/
-	width: 100px;
+	font-family: HeroLight;	
 	text-align: center;
 }
 
@@ -157,8 +156,9 @@ html, body
 #friendAbout
 {
 	position: relative;
-	top: 45%;
+	top: 50%;
 	left: 17%;
+	width: 100px;
 }
 
 
@@ -167,6 +167,7 @@ html, body
 	position: relative;
 	top: 55%;
 	left: 73%;
+	width: 100px;
 }
 
 
@@ -174,6 +175,7 @@ html, body
 {
 	position: relative;
 	left: 80%;
+	width: 200px;
 }
 
 
@@ -187,23 +189,22 @@ html, body
 #infographicTitle
 {
 	color: #1f2521;
-	font-family: HeroLight/*DKLemonYellowSun*/;
-	font-size: 80px;
+	font-family: HeroLight;
+	font-size: 60px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
-	width: 850px;
-	/*background-color: white;*/
+	top: 3%;
+	width: 850px;	
 }
 
 
 #infographic h2
 {
 	color: #1f2521;
-	font-family: HeroLight/*DKLemonYellowSun*/;
+	font-family: HeroLight;
 }
 
 
@@ -225,7 +226,6 @@ html, body
 
 /* lyric videos */
 
-
 /* heaven */
 #heaven
 {
@@ -241,14 +241,36 @@ html, body
 {
 	color: #fcfcfb;
 	font-family: HeroLight;
-	font-size: 100px;
+	font-size: 80px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
+	top: 3%;
 	width: 500px;
+}
+
+
+#heaven h2
+{
+	color: #fcfcfb;
+	font-family: HeroLight;
+}
+
+
+#heavenAbout
+{
+	position: relative;
+	top: 60%;
+	left: 5%;
+}
+
+#heavenTeam
+{
+	position: relative;
+	top: 63%;
+	left: 5%;
 }
 
 
@@ -267,14 +289,36 @@ html, body
 {
 	color: #fcfcfb;
 	font-family: HeroLight;
-	font-size: 100px;
+	font-size: 80px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
+	top: 3%;
 	width: 500px;
+}
+
+
+#mama h2
+{
+	color: #fcfcfb;
+	font-family: HeroLight;
+}
+
+
+#mamaAbout
+{
+	position: relative;
+	top: 60%;
+	left: 5%;
+}
+
+#mamaTeam
+{
+	position: relative;
+	top: 63%;
+	left: 5%;
 }
 
 
@@ -289,13 +333,13 @@ html, body
 {
 	color: #1a1a1a;
 	font-family: GeoSans;
-	font-size: 100px;
+	font-size: 80px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 5%;
+	top: 3%;
 	width: 700px;
 }
 
