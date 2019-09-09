@@ -23,8 +23,7 @@ $(()=>{
 
 				let newActive = oldActive.next();
 				newActive.addClass('activePage');
-				newActive.find('.rightFG').addClass('rightFGActive');
-				newActive.find('.leftFG').addClass('leftFGActive');
+				
 
 				$('html, body').animate({
 			        scrollTop: newActive.offset().top,
@@ -33,6 +32,8 @@ $(()=>{
 			   
 
 			    setTimeout(() => {
+			    	newActive.find('.rightFG').addClass('rightFGActive');
+					newActive.find('.leftFG').addClass('leftFGActive');
 					$(window).on('scroll', scroll);
 				}, 2000);
 				
@@ -49,8 +50,7 @@ $(()=>{
 
 				let newActive = oldActive.prev();
 				newActive.addClass('activePage');
-				newActive.find('.rightFG').addClass('rightFGActive');
-				newActive.find('.leftFG').addClass('leftFGActive');
+				
 
 				$('html, body').animate({
 			        scrollTop: newActive.offset().top,
@@ -58,6 +58,8 @@ $(()=>{
 			    }, 2000);
 
 				setTimeout(() => {
+					newActive.find('.rightFG').addClass('rightFGActive');
+					newActive.find('.leftFG').addClass('leftFGActive');
 					$(window).on('scroll', scroll);
 				}, 2000);
 				
@@ -72,6 +74,34 @@ $(()=>{
 	
 	$(window).on('mousemove', e => {
 		
+	});
+
+	var currentX = '';
+	var currentY = '';
+	var movementConstant = .015;
+	$(window).on('mousemove', e => {
+		if(currentX == '') currentX = e.pageX;
+		var xdiff = e.pageX - currentX;
+		currentX = e.pageX;
+		if(currentY == '') currentY = e.pageY;
+		var ydiff = e.pageY - currentY;
+		currentY = e.pageY; 
+		$('.rightFGActive div').each(function(i, el) {
+			var movement = (i + 2) * (xdiff * movementConstant);
+			var movementy = (i + 2) * (ydiff * movementConstant);
+			var newX = $(el).position().left + movement;
+			var newY = $(el).position().top + movementy;
+			$(el).css('left', newX + 'px');
+			$(el).css('top', newY + 'px');
+		});
+		$('.leftFGActive div').each(function(i, el) {
+			var movement = (i + 2) * (xdiff * movementConstant);
+			var movementy = (i + 2) * (ydiff * movementConstant);
+			var newX = $(el).position().left + movement;
+			var newY = $(el).position().top + movementy;
+			$(el).css('left', newX + 'px');
+			$(el).css('top', newY + 'px');
+		});
 	});
 
 });

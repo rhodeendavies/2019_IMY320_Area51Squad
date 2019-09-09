@@ -61,6 +61,17 @@ body{
 
 }
 
+.leftFG div, .rightFG div{
+	height: 90%;
+	width: 70%;
+	position: absolute;
+	background-color: #a9a9a973;
+}
+
+.rightFG div{
+	right: 0px;
+}
+
 .leftFG{
 	left: -30%;
 	transform: rotate(-20deg);
@@ -72,12 +83,12 @@ body{
 }
 
 .leftFGActive{
-	left: 0px;
+	left: -10%;
 	transform: rotate(0deg);
 }
 
 .rightFGActive{
-	right: 0px;
+	right: -10%;
 	transform: rotate(0deg);
 }
 
