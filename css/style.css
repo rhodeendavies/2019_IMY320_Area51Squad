@@ -55,13 +55,14 @@ html, body
 {
 	color: #f9f9f9;
 	font-family: HeroLight;
-	font-size: 200px;
+	font-size: 150px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 33%;
+	top: 28%;
 	width: 500px;
+	text-align: center;
 	
 }
 
@@ -76,8 +77,8 @@ html, body
 #splitTitle
 {
 	color: black;
-	font-family: HeroLight;
-	font-size: 80px;
+	font-family: GeoSans;
+	font-size: 85px;
 	position: relative;
 	display: block;
 	margin-left: auto;
@@ -91,7 +92,7 @@ html, body
 #split h2
 {
 	color: #f9f9f9;
-	font-family: HeroLight;
+	font-family: GeoSans;
 	font-size: 40px;
 	background-color: #3e7089;
 	width: 220px;
@@ -134,7 +135,7 @@ html, body
 #filmTitle
 {
 	color: #f9f9f9;
-	font-family: HeroLight;
+	font-family: OpenSans;
 	font-size: 80px;
 	position: relative;
 	display: block;
@@ -148,7 +149,7 @@ html, body
 #friendCircle h2
 {
 	color: #cccccc;
-	font-family: HeroLight;	
+	font-family: OpenSans;	
 	text-align: center;
 }
 
@@ -189,8 +190,8 @@ html, body
 #infographicTitle
 {
 	color: #1f2521;
-	font-family: HeroLight;
-	font-size: 60px;
+	font-family: DKLemonYellowSun;
+	font-size: 80px;
 	text-align: center;
 	position: relative;
 	display: block;
@@ -204,7 +205,7 @@ html, body
 #infographic h2
 {
 	color: #1f2521;
-	font-family: HeroLight;
+	font-family: DKLemonYellowSun;
 }
 
 
@@ -240,7 +241,7 @@ html, body
 #heavenTitle
 {
 	color: #fcfcfb;
-	font-family: HeroLight;
+	font-family: Arial;
 	font-size: 80px;
 	text-align: center;
 	position: relative;
@@ -255,7 +256,7 @@ html, body
 #heaven h2
 {
 	color: #fcfcfb;
-	font-family: HeroLight;
+	font-family: Arial;
 }
 
 
@@ -288,14 +289,14 @@ html, body
 #mamaTitle
 {
 	color: #fcfcfb;
-	font-family: HeroLight;
-	font-size: 80px;
+	font-family: Sardonyx;
+	font-size: 95px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 3%;
+	top: 5%;
 	width: 500px;
 }
 
@@ -303,7 +304,7 @@ html, body
 #mama h2
 {
 	color: #fcfcfb;
-	font-family: HeroLight;
+	font-family: Sardonyx;
 }
 
 
@@ -332,7 +333,7 @@ html, body
 #hopmanTitle
 {
 	color: #1a1a1a;
-	font-family: HeroLight;
+	font-family: GeoSans;
 	font-size: 80px;
 	text-align: center;
 	position: relative;
