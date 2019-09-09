@@ -77,7 +77,7 @@ var con = document.getElementById("contact").id;
 if(con == "contact")
 {	
 	$("html").append(
-	   "<style>html, body, .msty_notcur {cursor:none !important;}.cursor {z-index:10000000000000; position: fixed;background-color:rgba(255,0,0,0.4);border: 3px solid rgba(255,255,255,0.4);width:10px;height:10px;border-radius:100%;transform:translate(-50%,-50%); transition: background-color 3s; top:0px;left:0px;pointer-events:none; transition: background-color 3s;} .overlink {background-color:rgba(255,100,100,0.1) !important;border: 2px solid rgba(255,255,255,0.25) !important; transition: background-color 3s;} .overtext {background-color:rgba(255,0,0,0.25) !important;border: 2px solid rgba(255,255,255,0.2) !important; transition: background-color 3s;}</style>"
+	   "<style>html, body, .msty_notcur {transition: width 3s, height 3s; cursor:none !important;transition: width 3s, height 3s;}.cursor {transition: width 3s, height 3s; z-index:10000000000000; position: fixed;background-color:rgba(255,0,0,0.4);border: 2px solid rgba(255,255,255,0.4);width:15px;height:15px;border-radius:100%;transform:translate(-50%,-50%); transition: background-color 3s; top:0px;left:0px;pointer-events:none; transition: background-color 3s;transition: width 3s, height 3s;} .overlink {width:30px;height:30px;background-color:rgba(255,100,100,0.1) !important;border: 2px solid rgba(255,255,255,0.25) !important; transition: background-color 3s;transition: width 3s, height 3s;} .overtext {width:30px; height:30px; background-color:rgba(255,0,0,0.25) !important;border: 2px solid rgba(255,255,255,0.2) !important; transition: background-color 3s;}</style>"
 	);
 }
 var scrollY = 0,
