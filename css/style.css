@@ -35,14 +35,53 @@
 html, body
 {
 	height: 100%;
-	overflow-x:hidden;
+}
+
+html{
+	overflow-x: hidden;
+}
+
+body{
+
 }
 
 .page
 {
 	width: 100%; 
 	height: 100%;
+	overflow-y: auto;
 }
+
+.leftFG, .rightFG{
+	height: 100%;
+	width: 30%;
+	background-color: #a9a9a973;
+	position: absolute;
+	transition: all 2s;
+
+}
+
+.leftFG{
+	left: -30%;
+	transform: rotate(-20deg);
+}
+
+.rightFG{
+	right: -30%;
+	transform: rotate(20deg);
+}
+
+.leftFGActive{
+	left: 0px;
+	transform: rotate(0deg);
+}
+
+.rightFGActive{
+	right: 0px;
+	transform: rotate(0deg);
+}
+
+
 
 /* landing page */
 #landing{
