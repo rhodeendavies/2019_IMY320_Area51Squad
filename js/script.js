@@ -18,12 +18,15 @@ $(()=>{
 
 				let oldActive = $('.activePage').first();
 				oldActive.removeClass('activePage');
-				oldActive.find('.rightFGActive').removeClass('rightFGActive');
-				oldActive.find('.leftFGActive').removeClass('leftFGActive');
+				oldActive.find('.rightFGActive').removeClass('rightFGActive activeParallax');
+				oldActive.find('.leftFGActive').removeClass('leftFGActive activeParallax');
+				oldActive.find('.rightFGActive').removeClass('activeParallax');
+				oldActive.find('.leftFGActive').removeClass('activeParallax');
 
 				let newActive = oldActive.next();
 				newActive.addClass('activePage');
-				
+				newActive.find('.rightFG').addClass('rightFGActive');
+				newActive.find('.leftFG').addClass('leftFGActive');
 
 				$('html, body').animate({
 			        scrollTop: newActive.offset().top,
@@ -32,8 +35,8 @@ $(()=>{
 			   
 
 			    setTimeout(() => {
-			    	newActive.find('.rightFG').addClass('rightFGActive');
-					newActive.find('.leftFG').addClass('leftFGActive');
+			    	newActive.find('.rightFG').addClass('activeParallax');
+					newActive.find('.leftFG').addClass('activeParallax');
 					$(window).on('scroll', scroll);
 				}, 2000);
 				
@@ -45,12 +48,15 @@ $(()=>{
 
 				let oldActive = $('.activePage').first();
 				oldActive.removeClass('activePage');
-				oldActive.find('.rightFGActive').removeClass('rightFGActive');
-				oldActive.find('.leftFGActive').removeClass('leftFGActive');
+				oldActive.find('.rightFGActive').removeClass('rightFGActive activeParallax');
+				oldActive.find('.leftFGActive').removeClass('leftFGActive activeParallax');
+				oldActive.find('.rightFGActive').removeClass('activeParallax');
+				oldActive.find('.leftFGActive').removeClass('activeParallax');
 
 				let newActive = oldActive.prev();
 				newActive.addClass('activePage');
-				
+				newActive.find('.rightFG').addClass('rightFGActive');
+				newActive.find('.leftFG').addClass('leftFGActive');
 
 				$('html, body').animate({
 			        scrollTop: newActive.offset().top,
@@ -58,8 +64,8 @@ $(()=>{
 			    }, 2000);
 
 				setTimeout(() => {
-					newActive.find('.rightFG').addClass('rightFGActive');
-					newActive.find('.leftFG').addClass('leftFGActive');
+					newActive.find('.rightFG').addClass('activeParallax');
+					newActive.find('.leftFG').addClass('activeParallax');
 					$(window).on('scroll', scroll);
 				}, 2000);
 				
@@ -71,11 +77,7 @@ $(()=>{
 	//scroll event listener
 	$(window).on('scroll', scroll);
 
-	
-	$(window).on('mousemove', e => {
-		
-	});
-
+	//parallax effect
 	var currentX = '';
 	var currentY = '';
 	var movementConstant = .015;
@@ -86,7 +88,7 @@ $(()=>{
 		if(currentY == '') currentY = e.pageY;
 		var ydiff = e.pageY - currentY;
 		currentY = e.pageY; 
-		$('.rightFGActive div').each(function(i, el) {
+		$('.activeParallax div').each(function(i, el) {
 			var movement = (i + 2) * (xdiff * movementConstant);
 			var movementy = (i + 2) * (ydiff * movementConstant);
 			var newX = $(el).position().left + movement;
@@ -94,14 +96,7 @@ $(()=>{
 			$(el).css('left', newX + 'px');
 			$(el).css('top', newY + 'px');
 		});
-		$('.leftFGActive div').each(function(i, el) {
-			var movement = (i + 2) * (xdiff * movementConstant);
-			var movementy = (i + 2) * (ydiff * movementConstant);
-			var newX = $(el).position().left + movement;
-			var newY = $(el).position().top + movementy;
-			$(el).css('left', newX + 'px');
-			$(el).css('top', newY + 'px');
-		});
+		
 	});
 
 });
