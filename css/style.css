@@ -199,23 +199,39 @@ html, body{
 /* navbar style */
 #navbar {
 	position: relative;
-	border: 0px white solid;
-	height: 20%; 
+	height: 25%; 
 	width: 70%;
-	top: 40%;
+	top: 35%;
 	left: 15%;
 }
 
-.navButton {
+.navBubble {
+	left: 0.3%;
+	margin: 0;
 	position: relative;
-	width: 10%;
-	height: 70%;
+	width: 19.5%;
+	height: 99%;
+	display: inline-block;
+}
+
+.navTip {
+	border: solid 2px white;
+	border-radius: 70px; 
+	position: relative;
+	text-align: center;
+	font-family: HeroLight;
+	color: white;
+}
+
+.navButton {
+	margin: 0px;
+	position: relative;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+	height: 60%;
 	border: solid white 2px;
 	border-radius: 70px;
-	top: 25%;
-	bottom: 5%;
-	margin-left: 5%;
-	margin-right: 5%;
 }
 
 .notVisible{
@@ -223,7 +239,7 @@ html, body{
 }
 
 #landingNav {
-
+	background-color:  #202321;
 }
 
 #splitNav {
