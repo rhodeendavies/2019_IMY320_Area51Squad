@@ -396,6 +396,9 @@ body{
 	padding-top: 60px;
 }
 
+
+
+
 /* navbar style */
 #navbar {
 	position: relative;
@@ -421,7 +424,7 @@ body{
 	text-align: center;
 	font-family: HeroLight;
 	color: white;
-	transition: 0.3s
+	transition: all 0.3s
 }
 
 .navButton {
@@ -433,7 +436,7 @@ body{
 	height: 60%;
 	border: solid white 2px;
 	border-radius: 70px;
-	transition: 0.3s;
+	transition: all 0.3s;
 }
 
 .navButton:hover {
@@ -443,34 +446,38 @@ body{
 	height: 70%;
 }
 
-.notVisible {
+#landingBubble{
 	display: none;
 }
 
-.visibleTip {
-	display: visible;
+.notVisibleTip {
+	opacity: 0;
 }
 
-#landingNav {
+.visibleTip{
+	opacity: 1;
+}
+
+#landingButton {
 	background-color:  #202321;
 }
 
-#splitNav {
+#splitButton {
 	background-color: #c5b8e6;
 }
 
-#friendCircleNav {
+#friendCircleButton {
 	background-color: #0b0022;
 } 
 
-#inforgraphicNav {
+#inforgraphicButton {
 	background-color: #aed7d3;
 }
 
-#lyricVideosNav {
+#lyricVideosButton {
 	background-color: white;
 }
 
-#hopmanNav {
+#hopmanButton {
 	background-color: #e6f7ca;
 }

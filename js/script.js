@@ -80,9 +80,20 @@ $(()=>{
 
 
 	$('.navButton').on('mouseover', e => {
-		
-		addClass('visible')
-	}
+		$(`#${e.target.id}`).prev().removeClass('notVisibleTip');
+		$(`#${e.target.id}`).prev().addClass('visibleTip');
+	});
+
+	$('.navButton').on('mouseout', e => {
+		$(`#${e.target.id}`).prev().removeClass('visibleTip');
+		$(`#${e.target.id}`).prev().addClass('notVisibleTip');
+	});
+
+	$('.navButton').on('click', e => {
+		$(`#${e.target.id}`).prev().removeClass('notVisibleTip');
+		$(`#${e.target.id}`).prev().addClass('visibleTip');
+	});
+
 
 	//parallax effect
 	var currentX = '';
