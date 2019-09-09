@@ -71,10 +71,7 @@ $(()=>{
 
 	
 	$(window).on('mousemove', e => {
-		let change;
-		let xpos = e.clientX;
-		let ypos = e.clientY;
-		let left = change*20;
+		
 	});
 
 });
