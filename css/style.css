@@ -32,53 +32,94 @@
 
 /* general style */
 
-html, body{
+html, body
+{
 	height: 100%;
+	overflow-x:hidden;
 }
 
-.page{
+.page
+{
 	width: 100%; 
 	height: 100%;
 }
 
 /* landing page */
 #landing{
-	
+
 }
 
 
-#guac_title
+#guacTitle
 {
 	color: #f9f9f9;
 	font-family: HeroLight;
-	font-size: 200px;
+	font-size: 150px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 33%;
+	top: 28%;
 	width: 500px;
+	text-align: center;
 	
 }
 
 
 /* split */
 #split{
-	
+
 }
 
 
-#split_title
+#splitTitle
 {
 	color: black;
 	font-family: GeoSans;
-	font-size: 140px;
+	font-size: 85px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 4%;
-	width: 350px;
+	top: 3%;
+	width: 300px;
+	text-align: center;
+}
+
+
+#split h2
+{
+	color: #f9f9f9;
+	font-family: GeoSans;
+	font-size: 40px;
+	background-color: #3e7089;
+	width: 220px;
+	text-align: center;
+	padding: 5px;
+}
+
+
+#splitAbout
+{
+	position: relative;
+	top: 6%;
+	left: 24%;
+}
+
+
+#splitTeam
+{
+	position: relative;
+	top: -10%;
+	left: 64%;
+}
+
+
+#splitGallery
+{
+	position: relative;
+	top: 32%;
+	left: 13%;
 }
 
 
@@ -88,7 +129,7 @@ html, body{
 }
 
 
-#film_title
+#filmTitle
 {
 	color: #f9f9f9;
 	font-family: OpenSans;
@@ -97,18 +138,52 @@ html, body{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 7%;
-	width: 750px;
+	top: 3%;	
+	text-align: center;
+}
+
+
+#friendCircle h2
+{
+	color: #cccccc;
+	font-family: OpenSans;	
+	text-align: center;
+}
+
+
+#friendAbout
+{
+	position: relative;
+	top: 50%;
+	left: 17%;
+	width: 100px;
+}
+
+
+#friendTrailer
+{
+	position: relative;
+	top: 55%;
+	left: 73%;
+	width: 100px;
+}
+
+
+#friendTeam
+{
+	position: relative;
+	left: 80%;
+	width: 200px;
 }
 
 
 /* infographic */
 #infographic{
-	
+
 }
 
 
-#infographic_title
+#infographicTitle
 {
 	color: #1f2521;
 	font-family: DKLemonYellowSun;
@@ -118,53 +193,127 @@ html, body{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
-	width: 500px;
+	top: 3%;
+	width: 850px;	
+}
+
+
+#infographic h2
+{
+	color: #1f2521;
+	font-family: DKLemonYellowSun;
+}
+
+
+#infographicAbout
+{
+	position: relative;
+	top: 15%;
+	left: 12%;
+}
+
+
+#infographicTeam
+{
+	position: relative;
+	top: 10%;
+	left: 76%;
 }
 
 
 /* lyric videos */
 
-
 /* heaven */
-#heaven{
-	
+#heaven
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	display: inline-block;
 }
 
 
-#heaven_title
+#heavenTitle
 {
 	color: #fcfcfb;
 	font-family: Arial;
-	font-size: 100px;
+	font-size: 80px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
+	top: 3%;
 	width: 500px;
+}
+
+
+#heaven h2
+{
+	color: #fcfcfb;
+	font-family: Arial;
+}
+
+
+#heavenAbout
+{
+	position: relative;
+	top: 60%;
+	left: 5%;
+}
+
+#heavenTeam
+{
+	position: relative;
+	top: 63%;
+	left: 5%;
 }
 
 
 /* mama */
-#mama{
-	
+#mama
+{
+	position: relative;
+	width: 50%;
+	height: 100%; 
+	float: right;
 }
 
 
-#mama_title
+#mamaTitle
 {
 	color: #fcfcfb;
 	font-family: Sardonyx;
-	font-size: 130px;
+	font-size: 95px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
+	top: 5%;
 	width: 500px;
+}
+
+
+#mama h2
+{
+	color: #fcfcfb;
+	font-family: Sardonyx;
+}
+
+
+#mamaAbout
+{
+	position: relative;
+	top: 60%;
+	left: 5%;
+}
+
+#mamaTeam
+{
+	position: relative;
+	top: 63%;
+	left: 5%;
 }
 
 
@@ -174,23 +323,24 @@ html, body{
 }
 
 
-#hopman_title
+#hopmanTitle
 {
 	color: #1a1a1a;
 	font-family: GeoSans;
-	font-size: 100px;
+	font-size: 80px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 5%;
+	top: 3%;
 	width: 700px;
 }
 
 
 /* contact page */
-#contact{
+#contact
+{
 	background-color: #202321;
 	color: white;
 	text-align: center;
