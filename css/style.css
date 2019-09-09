@@ -41,6 +41,14 @@ html, body{
 	height: 100%;
 }
 
+.leftFG, .rightFG{
+	height: 100%;
+	width: 30%;
+	background-color: #a9a9a973;
+}
+
+
+
 /* landing page */
 #landing{
 	background-color: #202321;
