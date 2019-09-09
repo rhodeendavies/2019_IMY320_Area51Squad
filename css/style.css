@@ -380,9 +380,63 @@ body{
 /* contact page */
 #contact
 {
+	font-family: HeroLight;
 	background-color: #202321;
 	color: white;
-	text-align: center;
-	padding-top: 60px;
+	text-align: left;
+	padding-top: 25px;
 }
 
+#contactTitle
+{
+	color: #f9f9f9;
+	font-size: 80px;
+	text-align: center;
+	
+}
+
+
+#contactImages
+{
+	position: relative;
+	/*background-color: white;*/
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+	text-align: center;
+}
+
+
+#gmailImage
+{
+	width: 70px;
+	margin: 0;
+
+}
+
+
+#whatsappImage
+{
+	width: 100px;
+
+}
+
+
+#contactUs
+{
+	position: relative;
+	left: 10%;
+}
+
+
+#contactUs div
+{
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+
+#contactUs a
+{
+	font-size: 17px;
+}
