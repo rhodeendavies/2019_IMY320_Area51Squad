@@ -45,9 +45,8 @@ html, body
 }
 
 /* landing page */
-#landing
-{
-	background-color: #202321;
+#landing{
+
 }
 
 
@@ -68,9 +67,8 @@ html, body
 
 
 /* split */
-#split
-{
-	background-color: #c5b8e6;
+#split{
+
 }
 
 
@@ -126,9 +124,8 @@ html, body
 
 
 /* the friend circle */
-#friendCircle
-{
-	background-color: #0b0022;
+#friendCircle{
+	
 }
 
 
@@ -181,9 +178,8 @@ html, body
 
 
 /* infographic */
-#infographic
-{
-	background-color: #aed7d3;
+#infographic{
+
 }
 
 
@@ -230,7 +226,6 @@ html, body
 /* heaven */
 #heaven
 {
-	background-color: #e8aab5;
 	position: relative;
 	width: 50%;
 	height: 100%;
@@ -278,7 +273,6 @@ html, body
 /* mama */
 #mama
 {
-	background-color: #3c0000;
 	position: relative;
 	width: 50%;
 	height: 100%; 
@@ -324,9 +318,8 @@ html, body
 
 
 /* hopman brewery */
-#hopman
-{
-	background-color: #e6f7ca;
+#hopman{
+	
 }
 
 
@@ -349,5 +342,8 @@ html, body
 #contact
 {
 	background-color: #202321;
+	color: white;
+	text-align: center;
+	padding-top: 60px;
 }
 
