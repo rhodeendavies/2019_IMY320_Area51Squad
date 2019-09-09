@@ -32,66 +32,143 @@
 
 /* general style */
 
-html, body{
+html, body
+{
 	height: 100%;
 }
 
-.page{
+html{
+	overflow-x: hidden;
+}
+
+body{
+
+}
+
+.page
+{
 	width: 100%; 
 	height: 100%;
+	overflow-x: hidden;
 }
+
+.leftFG, .rightFG{
+	height: 100%;
+	width: 30%;
+	background-color: #a9a9a973;
+	position: absolute;
+	transition: all 2s;
+
+}
+
+.leftFG{
+	left: -30%;
+	transform: rotate(-20deg);
+}
+
+.rightFG{
+	right: -30%;
+	transform: rotate(20deg);
+}
+
+.leftFGActive{
+	left: 0px;
+	transform: rotate(0deg);
+}
+
+.rightFGActive{
+	right: 0px;
+	transform: rotate(0deg);
+}
+
+
 
 /* landing page */
 #landing{
-	background-color: #202321;
-	
+
 }
 
 
-#guac_title
+#guacTitle
 {
 	color: #f9f9f9;
 	font-family: HeroLight;
-	font-size: 200px;
+	font-size: 150px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 33%;
+	top: 28%;
 	width: 500px;
+	text-align: center;
 	
 }
 
 
 /* split */
 #split{
-	background-color: #c5b8e6;
-	
+
 }
 
 
-#split_title
+#splitTitle
 {
 	color: black;
 	font-family: GeoSans;
-	font-size: 140px;
+	font-size: 85px;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 4%;
-	width: 350px;
+	top: 3%;
+	width: 300px;
+	text-align: center;
+}
+
+
+#split h2
+{
+	color: #f9f9f9;
+	font-family: GeoSans;
+	font-size: 40px;
+	background-color: #3e7089;
+	width: 220px;
+	text-align: center;
+	padding: 5px;
+}
+
+
+#splitAbout
+{
+	position: relative;
+	top: 6%;
+	left: 24%;
+}
+
+
+#splitTeam
+{
+	position: relative;
+	top: -10%;
+	left: 64%;
+}
+
+
+#splitGallery
+{
+	position: relative;
+	top: 32%;
+	left: 13%;
 }
 
 
 /* the friend circle */
 #friendCircle{
-	background-color: #0b0022;
 	
 }
 
 
-#film_title
+#filmTitle
 {
 	color: #f9f9f9;
 	font-family: OpenSans;
@@ -100,19 +177,52 @@ html, body{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 7%;
-	width: 750px;
+	top: 3%;	
+	text-align: center;
+}
+
+
+#friendCircle h2
+{
+	color: #cccccc;
+	font-family: OpenSans;	
+	text-align: center;
+}
+
+
+#friendAbout
+{
+	position: relative;
+	top: 50%;
+	left: 17%;
+	width: 100px;
+}
+
+
+#friendTrailer
+{
+	position: relative;
+	top: 55%;
+	left: 73%;
+	width: 100px;
+}
+
+
+#friendTeam
+{
+	position: relative;
+	left: 80%;
+	width: 200px;
 }
 
 
 /* infographic */
 #infographic{
-	background-color: #aed7d3;
-	
+
 }
 
 
-#infographic_title
+#infographicTitle
 {
 	color: #1f2521;
 	font-family: DKLemonYellowSun;
@@ -122,82 +232,154 @@ html, body{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
-	width: 500px;
+	top: 3%;
+	width: 850px;	
+}
+
+
+#infographic h2
+{
+	color: #1f2521;
+	font-family: DKLemonYellowSun;
+}
+
+
+#infographicAbout
+{
+	position: relative;
+	top: 15%;
+	left: 12%;
+}
+
+
+#infographicTeam
+{
+	position: relative;
+	top: 10%;
+	left: 76%;
 }
 
 
 /* lyric videos */
 
-
 /* heaven */
-#heaven{
-	background-color: #e8aab5;
-	
+#heaven
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	display: inline-block;
 }
 
 
-#heaven_title
+#heavenTitle
 {
 	color: #fcfcfb;
 	font-family: Arial;
-	font-size: 100px;
+	font-size: 80px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	top: 8%;
+	top: 3%;
 	width: 500px;
+}
+
+
+#heaven h2
+{
+	color: #fcfcfb;
+	font-family: Arial;
+}
+
+
+#heavenAbout
+{
+	position: relative;
+	top: 60%;
+	left: 5%;
+}
+
+#heavenTeam
+{
+	position: relative;
+	top: 63%;
+	left: 5%;
 }
 
 
 /* mama */
-#mama{
-	background-color: #3c0000;
-	
+#mama
+{
+	position: relative;
+	width: 50%;
+	height: 100%; 
+	float: right;
 }
 
 
-#mama_title
+#mamaTitle
 {
 	color: #fcfcfb;
 	font-family: Sardonyx;
-	font-size: 130px;
-	text-align: center;
-	position: relative;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	top: 8%;
-	width: 500px;
-}
-
-
-/* hopman brewery */
-#hopman
-{
-	background-color: #e6f7ca;
-}
-
-
-#hopman_title
-{
-	color: #1a1a1a;
-	font-family: GeoSans;
-	font-size: 100px;
+	font-size: 95px;
 	text-align: center;
 	position: relative;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	top: 5%;
+	width: 500px;
+}
+
+
+#mama h2
+{
+	color: #fcfcfb;
+	font-family: Sardonyx;
+}
+
+
+#mamaAbout
+{
+	position: relative;
+	top: 60%;
+	left: 5%;
+}
+
+#mamaTeam
+{
+	position: relative;
+	top: 63%;
+	left: 5%;
+}
+
+
+/* hopman brewery */
+#hopman{
+	
+}
+
+
+#hopmanTitle
+{
+	color: #1a1a1a;
+	font-family: GeoSans;
+	font-size: 80px;
+	text-align: center;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 3%;
 	width: 700px;
 }
 
 
 /* contact page */
-#contact{
+#contact
+{
 	background-color: #202321;
 	color: white;
 	text-align: center;
