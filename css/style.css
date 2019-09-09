@@ -429,6 +429,8 @@ body{
 	left: 10%;
 	height: 445px;
 	width: 300px;
+	float: left;
+	display: inline;
 }
 
 
@@ -442,4 +444,13 @@ body{
 #contactUs a
 {
 	font-size: 17px;
+}
+
+
+#contactYou
+{
+	position: relative;
+	float: left;
+	display: inline;
+	left: 52%;
 }
