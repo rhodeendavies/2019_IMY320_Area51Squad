@@ -67,6 +67,9 @@ $(()=>{
 	
 	$(window).on('scroll', scroll);
 
-	
+	$('.navButton').on('mouseover', e => {
+		
+		addClass('visible')
+	}
 
 });
