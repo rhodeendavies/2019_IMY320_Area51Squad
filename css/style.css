@@ -37,7 +37,8 @@ html, body
 	height: 100%;
 }
 
-html{
+html
+{
 	overflow-x: hidden;
 }
 
@@ -426,6 +427,8 @@ body{
 {
 	position: relative;
 	left: 10%;
+	height: 445px;
+	width: 300px;
 }
 
 
