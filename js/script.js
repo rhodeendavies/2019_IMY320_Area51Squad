@@ -6,26 +6,25 @@ $(()=>{
 
 	$('html, body').css("background-color", "#202321");
 
-	var activeColour = 0;
-
 	//function to scroll page
 	function scroll(){
 		let distance = $('.activePage').offset().top;
 
 		var currScrollTop = $(window).scrollTop();
 		//scrolling down
-		if (currScrollTop > lastScrollTop){
-			
+		if (currScrollTop > lastScrollTop){	
 			if ($(window).scrollTop() > distance){
-				++activeColour;
 				$(window).off('scroll');
 
 				let oldActive = $('.activePage').first();
 				oldActive.removeClass('activePage');
+				oldActive.find('.rightFGActive').removeClass('rightFGActive');
+				oldActive.find('.leftFGActive').removeClass('leftFGActive');
+
 				let newActive = oldActive.next();
 				newActive.addClass('activePage');
-
-				console.log(newActive.attr('data-backgroundColour'));
+				newActive.find('.rightFG').addClass('rightFGActive');
+				newActive.find('.leftFG').addClass('leftFGActive');
 
 				$('html, body').animate({
 			        scrollTop: newActive.offset().top,
@@ -41,13 +40,17 @@ $(()=>{
 		//scrolling up
 		} else {
 			if ($(window).scrollTop() < distance){
-				--activeColour;
 				$(window).off('scroll');
 
 				let oldActive = $('.activePage').first();
 				oldActive.removeClass('activePage');
+				oldActive.find('.rightFGActive').removeClass('rightFGActive');
+				oldActive.find('.leftFGActive').removeClass('leftFGActive');
+
 				let newActive = oldActive.prev();
 				newActive.addClass('activePage');
+				newActive.find('.rightFG').addClass('rightFGActive');
+				newActive.find('.leftFG').addClass('leftFGActive');
 
 				$('html, body').animate({
 			        scrollTop: newActive.offset().top,
