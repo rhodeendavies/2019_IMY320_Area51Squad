@@ -37,7 +37,8 @@ html, body
 	height: 100%;
 }
 
-html{
+html
+{
 	overflow-x: hidden;
 }
 
@@ -121,7 +122,6 @@ body{
 	top: 28%;
 	width: 500px;
 	text-align: center;
-	
 }
 
 
@@ -400,11 +400,162 @@ body{
 /* contact page */
 #contact
 {
+	font-family: HeroLight;
 	background-color: #202321;
 	color: white;
+	text-align: left;
+	padding-top: 25px;
+}
+
+#contactTitle
+{
+	color: #f9f9f9;
+	font-size: 80px;
 	text-align: center;
-	padding-top: 60px;
+	
 }
 
 
+#contactImages
+{
+	position: relative;
+	/*background-color: white;*/
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+	text-align: center;
+}
+
+
+#gmailImage
+{
+	width: 70px;
+	margin: 0;
+
+}
+
+
+#whatsappImage
+{
+	width: 100px;
+
+}
+
+
+#contactUs
+{
+	position: relative;
+	left: 10%;
+	height: 445px;
+	width: 300px;
+	float: left;
+	display: inline;
+}
+
+
+#contactUs div
+{
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+
+#contactUs a
+{
+	font-size: 17px;
+}
+
+
+#contactYou
+{
+	position: relative;
+	float: left;
+	display: inline;
+	left: 52%;
+}
+
+
+
+/* navbar style */
+#navbar {
+	position: relative;
+	height: 25%; 
+	width: 70%;
+	top: 35%;
+	left: 15%;
+}
+
+.navBubble {
+	left: 0.3%;
+	margin: 0;
+	position: relative;
+	width: 19.5%;
+	height: 99%;
+	display: inline-block;
+}
+
+.navTip {
+	border: solid 2px white;
+	border-radius: 70px; 
+	position: relative;
+	text-align: center;
+	font-family: HeroLight;
+	color: white;
+	transition: all 0.3s
+}
+
+.navButton {
+	margin: 0px;
+	position: relative;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+	height: 60%;
+	border: solid white 2px;
+	border-radius: 70px;
+	transition: all 0.3s;
+}
+
+.navButton:hover {
+	top: 10%;
+	left: 20%;
+	width: 60%;
+	height: 70%;
+}
+
+#landingBubble{
+	display: none;
+}
+
+.notVisibleTip {
+	opacity: 0;
+}
+
+.visibleTip{
+	opacity: 1;
+}
+
+#landingButton {
+	background-color:  #202321;
+}
+
+#splitButton {
+	background-color: #c5b8e6;
+}
+
+#friendCircleButton {
+	background-color: #0b0022;
+} 
+
+#inforgraphicButton {
+	background-color: #aed7d3;
+}
+
+#lyricVideosButton {
+	background-color: white;
+}
+
+#hopmanButton {
+	background-color: #e6f7ca;
+}
 

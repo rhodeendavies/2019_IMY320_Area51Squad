@@ -24,8 +24,58 @@
 	<body>
 		<div id="landing" class="page activePage" data-backgroundColour="#202321">
 			<h1 id="guacTitle">güac</h1>
+			<div id="navbar">
+				<div id="landingBubble" class="navBubble">
+					<div id="landingTip" class="navTip notVisibleTip">
+						Home
+					</div>
+					<div id="landingButton" class="navButton" onclick="scrollTo()" >
+						<!--Background image of avo-->
+					</div>
+				</div>
+				<div id="splitBubble" class="navBubble">
+					<div id="splitTip" class="navTip notVisibleTip">
+						Split
+					</div>
+					<div id="splitButton" class="navButton" onclick="scrollTo()" >
+						<!--Background image space-->
+					</div>
+				</div>
+				<div id="friendCircleBubble" class="navBubble">
+					<div id="friendCircleTip" class="navTip notVisibleTip">
+						The Friend Circle
+					</div>
+					<div id="friendCircleButton" class="navButton" onclick="scrollTo()" >
+						<!--Background image fire embers-->
+					</div>
+				</div>
+				<div id="infographicBubble" class="navBubble">
+					<div id="inforgraphicTip" class="navTip notVisibleTip">
+						The Straight Scoop
+					</div>
+					<div id="inforgraphicButton" class="navButton" onclick="scrollTo()" >
+						<!--Background image ice cream-->
+					</div>
+				</div>
+				<div id="lyricVideosBubble" class="navBubble">
+					<div id="lyricVideosTip" class="navTip notVisibleTip">
+						Heaven & Mama
+					</div>
+					<div id="lyricVideosButton" class="navButton" onclick="scrollTo()" >
+						<!--Background image heaven/hell-->
+					</div>
+				</div>
+				<div id="hopmanBubble" class="navBubble">
+					<div id="hopmanTip" class="navTip notVisibleTip">
+						Hopman Brewery
+					</div>
+					<div id="hopmanButton" class="navButton" onclick="scrollTo()" >
+						<!--Background image beer bubbles-->
+					</div>
+				</div>
+			</div>
+			
 		</div>
-
 
 		<!-- SPLIT -->
 		<div id="split" class="page" data-backgroundColour="#c5b8e6">
@@ -150,45 +200,76 @@
 
 		<!-- Contact -->
 		<div id="contact" class="page" data-backgroundColour="#202321">
-			<!--Rani, Form-->
-			<h2>CONTACTS</h2>
-			<br>
-			<p>Contact us:</p>
+			
+			<h1 id="contactTitle">Contact Us</h1>
+			
+			<div id="contactImages">
+				<img src="media/images/gmail.png" alt="mail logo" width="50" id="gmailImage">
+				<img src="media/images/whatsapp.png" alt="whatsapp logo" width="70" id="whatsappImage">
+			</div>
+
 			<!--FORM-->
-			<form action="contact.html">
-				<!--Gmail logo-->
-				<img src="media/images/gmail.png" alt="mail logo" width="50">
-				<br><br>
-				Rani Arraf:
-			  	<a href = "mailto: arraf.rani@gmail.com">Email</a>
-			  	<br>
-			 	Rhodeen Davies:
-			  	<a href = "mailto: rhodeendavies@gmail.com">Email</a>
-			  	<br>
-			  	Llewellyn de Vries:
+			<div id="contactUs">
+				
+				<div id="raniContact">
+					Rani Arraf
+					<br>
+				  	<a href = "mailto: arraf.rani@gmail.com">arraf.rani@gmail.com</a>
+				  	<br>
+				  	<a href="https://api.whatsapp.com/send?phone=27813160049">0813160049</a>
+			  	</div>
 
-			  	<a href = "mailto: llewellyn.devries@gmail.com">Email</a>
-			  	<br>
-			  	Madelyn Nestler:
-			  	<a href = "mailto: madznestler@gmail.com">Email</a>
-			  	<br><br>
+			  	
+			  	<div id="rhodeenContact">
+			  		Rhodeen Davies
+			 		<br>
+			  		<a href = "mailto: rhodeendavies@gmail.com">rhodeendavies@gmail.com</a>
+			  		<br>
+			  		<a href="https://api.whatsapp.com/send?phone=27834636522">0834636522</a>
+			  	</div>
 
-			  	<!--Whatsapp logo-->
-			  	<img src="media/images/whatsapp.png" alt="whatsapp logo" width="70">
-				<br><br>
-				Rani Arraf:
-			  	<a href="https://api.whatsapp.com/send?phone=27813160049">Message</a>
-			  	<br>
-			 	Rhodeen Davies:
-			  	<a href="https://api.whatsapp.com/send?phone=27834636522">Message</a>
-			  	<br>
-			  	Llewellyn de Vries:
-			  	<a href="https://api.whatsapp.com/send?phone=27788022047">Message</a>
-			  	<br>
-			  	Madelyn Nestler:
-			  	<a href="https://api.whatsapp.com/send?phone=27716755113">Message</a>
+
+			  	<div id="llewellynContact">
+			  		Llewellyn de Vries
+			  		<br>
+			  		<a href = "mailto: llewellyn.devries@gmail.com">llewellyn.devries@gmail.com</a>
+			  		<br>
+			  		<a href="https://api.whatsapp.com/send?phone=27788022047">0788022047</a>
+			  	</div>
+
+
+			  	<div id="maddyContact">
+			  		Madelyn Nestler
+			  		<br>
+			  		<a href = "mailto: madznestler@gmail.com">madznestler@gmail.com</a>
+			  		<br>
+			  		<a href="https://api.whatsapp.com/send?phone=27716755113">0716755113</a>
+			  	</div>
+
+			  	
+			  	
 			  	<br><br>
+			</div>
+
+
+			<form id="contactYou">
+
+				<h2 id="contactYouTitle">We'll Contact You</h2>
+
+				<br>
+				
+				<input type="email" name="emailAddress" placeholder="johndoe@gmail.com">
+
+				<br>
+				<br>
+
+				<input type="submit" value="Submit">
+
+
+
+
 			</form>
+
 		</div>
 
 
