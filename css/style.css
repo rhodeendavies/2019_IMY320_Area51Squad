@@ -35,11 +35,13 @@
 html, body
 {
 	height: 100%;
+	
 }
 
 html
 {
 	overflow-x: hidden;
+	
 }
 
 body{
@@ -47,12 +49,39 @@ body{
 }
 
 .cursor{
+	z-index: 99;
+	pointer-events: none;
 	width: 20px;
 	height: 20px;
-	border: 1px solid white;
-	background-color: white;
+	border: 2px solid white;
 	border-radius: 50%;
 	position: absolute;
+	transition-duration: 150ms;
+	transition-timing-function: ease-out;
+	
+}
+
+.cursorClick{
+	animation: cursorClickAnim 0.5s forwards;
+}
+
+@keyframes cursorClickAnim{
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(2);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.cursorHover{
+	width: 50px;
+	height: 50px;
 }
 
 .page
@@ -146,15 +175,15 @@ body{
 }
 
 
-#split h2
+#splitAbout, #splitTeam, #splitGallery
 {
 	color: #f9f9f9;
 	font-family: GeoSans;
 	font-size: 40px;
 	background-color: #3e7089;
-	width: 220px;
+	width: fit-content;
 	text-align: center;
-	padding: 5px;
+	padding: 10px;
 }
 
 
@@ -188,7 +217,7 @@ body{
 }
 
 
-#filmTitle
+#friendCircleTitle
 {
 	color: #f9f9f9;
 	font-family: OpenSans;
@@ -202,11 +231,15 @@ body{
 }
 
 
-#friendCircle h2
+#friendAbout, #friendTrailer, #friendTeam
 {
 	color: #cccccc;
 	font-family: OpenSans;	
 	text-align: center;
+	font-size: 40px;
+	background-color: #3e7089;
+	width: fit-content;
+	padding: 10px;
 }
 
 
@@ -215,24 +248,22 @@ body{
 	position: relative;
 	top: 50%;
 	left: 17%;
-	width: 100px;
 }
 
 
 #friendTrailer
 {
 	position: relative;
-	top: 55%;
+	top: 45%;
 	left: 73%;
-	width: 100px;
 }
 
 
 #friendTeam
 {
 	position: relative;
-	left: 80%;
-	width: 200px;
+	left: 65%;
+	top: -10%;
 }
 
 
@@ -257,10 +288,15 @@ body{
 }
 
 
-#infographic h2
+#infographicAbout, #infographicTeam
 {
 	color: #1f2521;
 	font-family: DKLemonYellowSun;
+	font-size: 40px;
+	background-color: #3e7089;
+	width: fit-content;
+	text-align: center;
+	padding: 10px;
 }
 
 
@@ -285,10 +321,7 @@ body{
 /* heaven */
 #heaven
 {
-	position: relative;
-	width: 50%;
-	height: 100%;
-	display: inline-block;
+	
 }
 
 
@@ -298,44 +331,41 @@ body{
 	font-family: Arial;
 	font-size: 80px;
 	text-align: center;
-	position: relative;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	top: 3%;
-	width: 500px;
+	height: 25%;
 }
 
 
-#heaven h2
+#heavenAbout, #heavenTeam
 {
 	color: #fcfcfb;
 	font-family: Arial;
+	font-size: 40px;
+	background-color: #3e7089;
+	width: fit-content;
+	text-align: center;
+	padding: 10px;
 }
 
 
 #heavenAbout
 {
 	position: relative;
-	top: 60%;
-	left: 5%;
+	top: 54%;
+	left: 7%
 }
 
 #heavenTeam
 {
 	position: relative;
-	top: 63%;
-	left: 5%;
+	top: 41.5%;
+	left: 63%
 }
 
 
 /* mama */
 #mama
 {
-	position: relative;
-	width: 50%;
-	height: 100%; 
-	float: right;
+	
 }
 
 
@@ -345,34 +375,34 @@ body{
 	font-family: Sardonyx;
 	font-size: 95px;
 	text-align: center;
-	position: relative;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	top: 5%;
-	width: 500px;
+	height: 25%;
 }
 
 
-#mama h2
+#mamaAbout, #mamaTeam
 {
 	color: #fcfcfb;
 	font-family: Sardonyx;
+	font-size: 40px;
+	background-color: #3e7089;
+	width: fit-content;
+	text-align: center;
+	padding: 10px;
 }
 
 
 #mamaAbout
 {
 	position: relative;
-	top: 60%;
-	left: 5%;
+	top: 54%;
+	left: 7%
 }
 
 #mamaTeam
 {
 	position: relative;
-	top: 63%;
-	left: 5%;
+	top: 41.5%;
+	left: 75%
 }
 
 

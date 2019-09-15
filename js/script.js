@@ -1,5 +1,4 @@
 $(()=>{
-
 	//SCROLL LOCK
 	$(window).scrollTop(0);
 
@@ -78,23 +77,6 @@ $(()=>{
 	//scroll event listener
 	$(window).on('scroll', scroll);
 
-
-	$('.navButton').on('mouseover', e => {
-		$(`#${e.target.id}`).prev().removeClass('notVisibleTip');
-		$(`#${e.target.id}`).prev().addClass('visibleTip');
-	});
-
-	$('.navButton').on('mouseout', e => {
-		$(`#${e.target.id}`).prev().removeClass('visibleTip');
-		$(`#${e.target.id}`).prev().addClass('notVisibleTip');
-	});
-
-	$('.navButton').on('click', e => {
-		$(`#${e.target.id}`).prev().removeClass('notVisibleTip');
-		$(`#${e.target.id}`).prev().addClass('visibleTip');
-	});
-
-
 	//parallax effect
 	var currentX = '';
 	var currentY = '';
@@ -119,6 +101,32 @@ $(()=>{
 
 
 	//mouse pointer
+	const cursor = $('.cursor');
+	let offset = 10;
+	$(window).on('mousemove', e => {
+		cursor.css({
+			'top': `${e.pageY - offset}px`, 
+			'left': `${e.pageX - offset}px`
+		});
+	});
+
+	$(window).on('click', e => {
+		cursor.addClass('cursorClick');
+
+		setTimeout(() => {
+			cursor.removeClass('cursorClick');
+		}, 500);
+	});
+
+	$('.hoverable').hover(() => {
+		offset = 25;
+		cursor.addClass('cursorHover');
+	}, () => {
+		offset = 10;
+		cursor.removeClass('cursorHover');
+	});
+
+	
 
 });
 
