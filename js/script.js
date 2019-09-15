@@ -81,7 +81,8 @@ $(()=>{
 	var currentX = '';
 	var currentY = '';
 	var movementConstant = .015;
-	$(window).on('mousemove', e => {
+
+	function parallax(e){
 		if(currentX == '') currentX = e.pageX;
 		var xdiff = e.pageX - currentX;
 		currentX = e.pageX;
@@ -89,27 +90,35 @@ $(()=>{
 		var ydiff = e.pageY - currentY;
 		currentY = e.pageY; 
 		$('.activeParallax div').each(function(i, el) {
-			var movement = (i + 2) * (xdiff * movementConstant);
+			var movementx = (i + 2) * (xdiff * movementConstant);
 			var movementy = (i + 2) * (ydiff * movementConstant);
-			var newX = $(el).position().left + movement;
+			var newX = $(el).position().left + movementx;
 			var newY = $(el).position().top + movementy;
 			$(el).css('left', newX + 'px');
 			$(el).css('top', newY + 'px');
 		});
-		
-	});
+	}
+
+	//parallax event listener
+	$(window).on('mousemove', parallax);
 
 
 	//mouse pointer
 	const cursor = $('.cursor');
-	let offset = 10;
-	$(window).on('mousemove', e => {
-		cursor.css({
-			'top': `${e.pageY - offset}px`, 
-			'left': `${e.pageX - offset}px`
-		});
-	});
+	let offsetX = 10;
+	let offsetY = 10;
 
+	function followMouse(e){
+		cursor.css({
+			'top': `${e.pageY - offsetY}px`, 
+			'left': `${e.pageX - offsetX}px`
+		});
+	}
+
+	//cursor event listener
+	$(window).on('mousemove', followMouse);
+
+	//click event listener
 	$(window).on('click', e => {
 		cursor.addClass('cursorClick');
 
@@ -118,13 +127,41 @@ $(()=>{
 		}, 500);
 	});
 
-	$('.hoverable').hover(() => {
-		offset = 25;
-		cursor.addClass('cursorHover');
-	}, () => {
-		offset = 10;
-		cursor.removeClass('cursorHover');
+	//hover event listener
+	$('body').on('mouseover', '.hoverable', e => {
+		$(window).off('mousemove');
+
+		let newWidth = $(e.target).width();
+		let newHeight = $(e.target).height();
+
+		
+		offsetX = newWidth/2;
+		offsetY = newHeight/2;
+		cursor.css({
+			'transform': `scale(${1.3})`,
+			'width': `${newWidth}px`,
+			'height': `${newHeight}px`,
+			'border-radius': `${$(e.target).css('border-radius')}`,
+			'top': `${$(e.target).offset().top}px`,
+			'left': `${$(e.target).offset().left}px`
+		});
+
+		
+
 	});
+
+	//hover off event listener
+	$('body').on('mouseleave', '.hoverable', () => {
+		$(window).on('mousemove', parallax);
+		$(window).on('mousemove', followMouse);
+		offsetX = 10;
+		offsetY = 10;
+		cursor.css({
+			'width': '20px',
+			'height': '20px',
+			'border-radius': '50%'
+		});
+	})
 
 	
 
