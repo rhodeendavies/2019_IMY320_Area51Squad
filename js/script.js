@@ -6,6 +6,36 @@ $(()=>{
 
 	$('html, body').css("background-color", "#202321");
 
+	function scrollRemoveClasses(){
+		//remove handler while scrolling animation plays
+		$(window).off('scroll');
+
+		let oldActive = $('.activePage').first();
+		oldActive.removeClass('activePage');
+		oldActive.find('.rightFGActive').removeClass('rightFGActive activeParallax');
+		oldActive.find('.leftFGActive').removeClass('leftFGActive activeParallax');
+
+		return oldActive;
+	}
+
+	function scrollAddClasses(newActive){
+		newActive.addClass('activePage');
+		newActive.find('.rightFG').addClass('rightFGActive');
+		newActive.find('.leftFG').addClass('leftFGActive');
+
+		$('html, body').animate({
+	        scrollTop: newActive.offset().top,
+	        backgroundColor: newActive.attr('data-backgroundColour')
+	    }, 2000);
+	   
+		//after animation has played, add classes and event handler
+	    setTimeout(() => {
+	    	newActive.find('.rightFG').addClass('activeParallax');
+			newActive.find('.leftFG').addClass('activeParallax');
+			$(window).on('scroll', scroll);
+		}, 2000);
+	}
+
 	//function to scroll page
 	function scroll(){
 		let distance = $('.activePage').offset().top;
@@ -14,61 +44,20 @@ $(()=>{
 		//scrolling down
 		if (currScrollTop > lastScrollTop){	
 			if ($(window).scrollTop() > distance){
-				$(window).off('scroll');
-
-				let oldActive = $('.activePage').first();
-				oldActive.removeClass('activePage');
-				oldActive.find('.rightFGActive').removeClass('rightFGActive activeParallax');
-				oldActive.find('.leftFGActive').removeClass('leftFGActive activeParallax');
-				oldActive.find('.rightFGActive').removeClass('activeParallax');
-				oldActive.find('.leftFGActive').removeClass('activeParallax');
+				let oldActive = scrollRemoveClasses();
 
 				let newActive = oldActive.next();
-				newActive.addClass('activePage');
-				newActive.find('.rightFG').addClass('rightFGActive');
-				newActive.find('.leftFG').addClass('leftFGActive');
 
-				$('html, body').animate({
-			        scrollTop: newActive.offset().top,
-			        backgroundColor: newActive.attr('data-backgroundColour')
-			    }, 2000);
-			   
-
-			    setTimeout(() => {
-			    	newActive.find('.rightFG').addClass('activeParallax');
-					newActive.find('.leftFG').addClass('activeParallax');
-					$(window).on('scroll', scroll);
-				}, 2000);
-				
+				scrollAddClasses(newActive);
 			}
 		//scrolling up
 		} else {
 			if ($(window).scrollTop() < distance){
-				$(window).off('scroll');
-
-				let oldActive = $('.activePage').first();
-				oldActive.removeClass('activePage');
-				oldActive.find('.rightFGActive').removeClass('rightFGActive activeParallax');
-				oldActive.find('.leftFGActive').removeClass('leftFGActive activeParallax');
-				oldActive.find('.rightFGActive').removeClass('activeParallax');
-				oldActive.find('.leftFGActive').removeClass('activeParallax');
+				let oldActive = scrollRemoveClasses();
 
 				let newActive = oldActive.prev();
-				newActive.addClass('activePage');
-				newActive.find('.rightFG').addClass('rightFGActive');
-				newActive.find('.leftFG').addClass('leftFGActive');
-
-				$('html, body').animate({
-			        scrollTop: newActive.offset().top,
-			        backgroundColor: newActive.attr('data-backgroundColour')
-			    }, 2000);
-
-				setTimeout(() => {
-					newActive.find('.rightFG').addClass('activeParallax');
-					newActive.find('.leftFG').addClass('activeParallax');
-					$(window).on('scroll', scroll);
-				}, 2000);
 				
+				scrollAddClasses(newActive);
 			}
 		}
 		lastScrollTop = currScrollTop;
@@ -131,14 +120,16 @@ $(()=>{
 	$('body').on('mouseover', '.hoverable', e => {
 		$(window).off('mousemove');
 
-		let newWidth = $(e.target).width();
-		let newHeight = $(e.target).height();
+		let newWidth = ($(e.target).hasClass('navButton') ? $(e.target).width() : $(e.target).width() + 20);
+		let newHeight = ($(e.target).hasClass('navButton') ? $(e.target).height() : $(e.target).height() + 20);
 
-		
+		let scale = ($(e.target).hasClass('pageElement') ? 1.1 : 1.3);
+
 		offsetX = newWidth/2;
 		offsetY = newHeight/2;
+
 		cursor.css({
-			'transform': `scale(${1.3})`,
+			'transform': `scale(${scale})`,
 			'width': `${newWidth}px`,
 			'height': `${newHeight}px`,
 			'border-radius': `${$(e.target).css('border-radius')}`,
