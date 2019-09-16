@@ -29,7 +29,7 @@
 					<div id="landingTip" class="navTip notVisibleTip">
 						Home
 					</div>
-					<div id="landingButton" class="navButton" onclick="scrollTo()" >
+					<div id="landingButton" class="navButton hoverable" onclick="scrollTo()" >
 						<!--Background image of avo-->
 					</div>
 				</div>
@@ -37,7 +37,7 @@
 					<div id="splitTip" class="navTip notVisibleTip">
 						Split
 					</div>
-					<div id="splitButton" class="navButton" onclick="scrollTo()" >
+					<div id="splitButton" class="navButton hoverable" onclick="scrollTo()" >
 						<!--Background image space-->
 					</div>
 				</div>
@@ -45,7 +45,7 @@
 					<div id="friendCircleTip" class="navTip notVisibleTip">
 						The Friend Circle
 					</div>
-					<div id="friendCircleButton" class="navButton" onclick="scrollTo()" >
+					<div id="friendCircleButton" class="navButton hoverable" onclick="scrollTo()" >
 						<!--Background image fire embers-->
 					</div>
 				</div>
@@ -53,7 +53,7 @@
 					<div id="inforgraphicTip" class="navTip notVisibleTip">
 						The Straight Scoop
 					</div>
-					<div id="inforgraphicButton" class="navButton" onclick="scrollTo()" >
+					<div id="inforgraphicButton" class="navButton hoverable" onclick="scrollTo()" >
 						<!--Background image ice cream-->
 					</div>
 				</div>
@@ -61,7 +61,7 @@
 					<div id="lyricVideosTip" class="navTip notVisibleTip">
 						Heaven & Mama
 					</div>
-					<div id="lyricVideosButton" class="navButton" onclick="scrollTo()" >
+					<div id="lyricVideosButton" class="navButton hoverable" onclick="scrollTo()" >
 						<!--Background image heaven/hell-->
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 					<div id="hopmanTip" class="navTip notVisibleTip">
 						Hopman Brewery
 					</div>
-					<div id="hopmanButton" class="navButton" onclick="scrollTo()" >
+					<div id="hopmanButton" class="navButton hoverable" onclick="scrollTo()" >
 						<!--Background image beer bubbles-->
 					</div>
 				</div>
@@ -90,17 +90,9 @@
 			</div>
 			<h1 id="splitTitle">Split</h1>
 
-			<div id="splitAbout">
-				<h2>About</h2>
-			</div>
-
-			<div id="splitTeam">
-				<h2>The Team</h2>
-			</div>
-
-			<div id="splitGallery">
-				<h2>Gallery</h2>
-			</div>
+			<div id="splitAbout" class="hoverable pageElement">About</div>
+			<div id="splitTeam" class="hoverable pageElement">The Team</div>
+			<div id="splitGallery" class="hoverable pageElement">Gallery</div>
 		</div>
 
 
@@ -114,19 +106,11 @@
 				<div></div>
 				<div></div>
 			</div>
-			<h1 id="filmTitle">The Friend Circle</h1>
+			<h1 id="friendCircleTitle">The Friend Circle</h1>
 
-			<div id="friendAbout">
-				<h2>About</h2>
-			</div>
-
-			<div id="friendTrailer">
-				<h2>Trailer</h2>
-			</div>
-
-			<div id="friendTeam">
-				<h2>The Team</h2>
-			</div>
+			<div id="friendAbout" class="hoverable pageElement">About</div>
+			<div id="friendTrailer" class="hoverable pageElement">Trailer</div>
+			<div id="friendTeam" class="hoverable pageElement">The Team</div>
 		</div>
 
 
@@ -142,43 +126,28 @@
 			</div>
 			<h1 id="infographicTitle">The Straight Scoop On Ice Cream</h1>
 
-			<div id="infographicAbout">
-				<h2>About</h2>
-			</div>
-
-			<div id="infographicTeam">
-				<h2>The Team</h2>
-			</div>
+			<div id="infographicAbout" class="hoverable pageElement">About</div>
+			<div id="infographicTeam" class="hoverable pageElement">The Team</div>
 		</div>
 
 
-		<div id="lyricVideos" class="page" data-backgroundColour="#e8aab5">
+		<div id="lyricVideos" class="page row" data-backgroundColour="#e8aab5">
 
 			<!-- HEAVEN -->
-			<div id="heaven">
+			<div id="heaven" class="col-6">
 				<h1 id="heavenTitle">HEAVEN</h1>
 
-				<div id="heavenAbout">
-					<h2>About</h2>
-				</div>
-
-				<div id="heavenTeam">
-					<h2>The Team</h2>
-				</div>
+				<div id="heavenAbout" class="hoverable pageElement">About</div>
+				<div id="heavenTeam" class="hoverable pageElement">The Team</div>
 			</div>
 
 
 			<!-- MAMA -->
-			<div id="mama">
+			<div id="mama" class="col-6">
 				<h1 id="mamaTitle">MAMA</h1>
 
-				<div id="mamaAbout">
-					<h2>About</h2>
-				</div>
-
-				<div id="mamaTeam">
-					<h2>The Team</h2>
-				</div>
+				<div id="mamaAbout" class="hoverable pageElement">About</div>
+				<div id="mamaTeam" class="hoverable pageElement">The Team</div>
 			</div>
 			
 		</div>
@@ -195,6 +164,10 @@
 				<div></div>
 			</div>
 			<h1 id="hopmanTitle">Hopman Brewery</h1>
+			<div id="oneFineBlonde" class="hoverable pageElement"></div>
+			<div id="smokeyOke" class="hoverable pageElement"></div>
+			<div id="quay49" class="hoverable pageElement"></div>
+			<div id="strandloper" class="hoverable pageElement"></div>
 		</div>
 
 
@@ -271,6 +244,9 @@
 			</form>
 
 		</div>
+
+
+		<div class="cursor"></div>
 
 
 
