@@ -3,8 +3,14 @@ $(()=>{
 	$(window).scrollTop(0);
 
 	var lastScrollTop = $(window).scrollTop(0);
+	var currScrollTop;
 
-	$('html, body').css("background-color", "#202321");
+	//scroll needs cursor details
+	const cursor = $('.cursor');
+	let lastMouseY;
+	let lastMouseX;
+	let offsetX = 10;
+	let offsetY = 10;
 
 	function scrollRemoveClasses(){
 		//remove handler while scrolling animation plays
@@ -40,28 +46,44 @@ $(()=>{
 		}, 2000);
 	}
 
+	function adjustScrollTop(newActive, direction){
+		let newPos;
+		//down
+		if (direction > 0){
+			newPos = newActive.offset().top + lastMouseY - lastScrollTop - offsetY;
+		//up
+		} else {
+			newPos = lastMouseY - lastScrollTop + newActive.offset().top - offsetY;
+		}
+		cursor.animate({
+	    	'top': `${newPos}px`,
+	    }, 2000);
+
+	    lastMouseY = newPos;
+	}
+
 	//function to scroll page
 	function scroll(){
 		let distance = $('.activePage').offset().top;
 
-		var currScrollTop = $(window).scrollTop();
+		currScrollTop = $(window).scrollTop();
+
+		let newActive, oldActive;
 		//scrolling down
 		if (currScrollTop > lastScrollTop){	
 			if ($(window).scrollTop() > distance){
-				let oldActive = scrollRemoveClasses();
-
-				let newActive = oldActive.next();
-
+				oldActive = scrollRemoveClasses();
+				newActive = oldActive.next();
 				scrollAddClasses(newActive, oldActive);
+				adjustScrollTop(newActive, 1);
 			}
 		//scrolling up
 		} else {
 			if ($(window).scrollTop() < distance){
-				let oldActive = scrollRemoveClasses();
-
-				let newActive = oldActive.prev();
-				
+				oldActive = scrollRemoveClasses();
+				newActive = oldActive.prev();
 				scrollAddClasses(newActive, oldActive);
+				adjustScrollTop(newActive, -1);
 			}
 		}
 		lastScrollTop = currScrollTop;
@@ -69,6 +91,7 @@ $(()=>{
 	
 	//scroll event listener
 	$(window).on('scroll', scroll);
+
 
 	//parallax effect
 	var currentX = '';
@@ -97,15 +120,16 @@ $(()=>{
 	$(window).on('mousemove', parallax);
 
 
-	//mouse pointer
-	const cursor = $('.cursor');
-	let offsetX = 10;
-	let offsetY = 10;
 
+
+	//mouse pointer
 	function followMouse(e){
+		lastMouseY = e.pageY;
+		lastMouseX = e.pageX;
+		cursor.stop();
 		cursor.css({
-			'top': `${e.pageY - offsetY}px`, 
-			'left': `${e.pageX - offsetX}px`
+			'top': `${lastMouseY - offsetY}px`, 
+			'left': `${lastMouseX - offsetX}px`
 		});
 	}
 
@@ -121,7 +145,7 @@ $(()=>{
 		}, 500);
 	});
 
-	//hover event listener
+	//hover over event listener
 	$('body').on('mouseover', '.hoverable', e => {
 		$(window).off('mousemove');
 
@@ -139,11 +163,9 @@ $(()=>{
 			'height': `${newHeight}px`,
 			'border-radius': `${$(e.target).css('border-radius')}`,
 			'top': `${$(e.target).offset().top}px`,
-			'left': `${$(e.target).offset().left}px`
+			'left': `${$(e.target).offset().left}px`,
+			'transition': 'transform 150ms, width 150ms, height 150ms, border-radius 150ms, top 150ms, left 150ms'
 		});
-
-		
-
 	});
 
 	//hover off event listener
@@ -155,8 +177,14 @@ $(()=>{
 		cursor.css({
 			'width': '20px',
 			'height': '20px',
-			'border-radius': '50%'
+			'border-radius': '50%',
+
 		});
+		setTimeout(() => {
+			cursor.css({
+				'transition': 'transform 150ms, width 150ms, height 150ms, border-radius 150ms'
+			});
+		}, 150);
 	})
 
 	
