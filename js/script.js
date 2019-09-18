@@ -12,13 +12,13 @@ $(()=>{
 
 		let oldActive = $('.activePage').first();
 		oldActive.removeClass('activePage');
-		oldActive.find('.rightFGActive').removeClass('rightFGActive activeParallax');
-		oldActive.find('.leftFGActive').removeClass('leftFGActive activeParallax');
+		$('.rightFGActive').removeClass('rightFGActive activeParallax');
+		$('.leftFGActive').removeClass('leftFGActive activeParallax');
 
 		return oldActive;
 	}
 
-	function scrollAddClasses(newActive){
+	function scrollAddClasses(newActive, oldActive){
 		newActive.addClass('activePage');
 		newActive.find('.rightFG').addClass('rightFGActive');
 		newActive.find('.leftFG').addClass('leftFGActive');
@@ -30,6 +30,10 @@ $(()=>{
 	   
 		//after animation has played, add classes and event handler
 	    setTimeout(() => {
+	    	oldActive.find('.foreGround div').css({
+				'top': '0px',
+				'left': '0px'
+			});
 	    	newActive.find('.rightFG').addClass('activeParallax');
 			newActive.find('.leftFG').addClass('activeParallax');
 			$(window).on('scroll', scroll);
@@ -48,7 +52,7 @@ $(()=>{
 
 				let newActive = oldActive.next();
 
-				scrollAddClasses(newActive);
+				scrollAddClasses(newActive, oldActive);
 			}
 		//scrolling up
 		} else {
@@ -57,7 +61,7 @@ $(()=>{
 
 				let newActive = oldActive.prev();
 				
-				scrollAddClasses(newActive);
+				scrollAddClasses(newActive, oldActive);
 			}
 		}
 		lastScrollTop = currScrollTop;
@@ -69,20 +73,21 @@ $(()=>{
 	//parallax effect
 	var currentX = '';
 	var currentY = '';
-	var movementConstant = .015;
 
 	function parallax(e){
 		if(currentX == '') currentX = e.pageX;
-		var xdiff = e.pageX - currentX;
+		let xdiff = e.pageX - currentX;
 		currentX = e.pageX;
 		if(currentY == '') currentY = e.pageY;
-		var ydiff = e.pageY - currentY;
+		let ydiff = e.pageY - currentY;
 		currentY = e.pageY; 
+		
 		$('.activeParallax div').each(function(i, el) {
-			var movementx = (i + 2) * (xdiff * movementConstant);
-			var movementy = (i + 2) * (ydiff * movementConstant);
-			var newX = $(el).position().left + movementx;
-			var newY = $(el).position().top + movementy;
+			let movementConstant = i % 2 == 0 ? .015 : 0.03;
+			let movementx = (i + 2) * (xdiff * movementConstant);
+			let movementy = (i + 2) * (ydiff * movementConstant);
+			let newX = $(el).position().left + movementx;
+			let newY = $(el).position().top + movementy;
 			$(el).css('left', newX + 'px');
 			$(el).css('top', newY + 'px');
 		});
