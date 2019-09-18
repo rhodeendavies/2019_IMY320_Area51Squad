@@ -55,8 +55,8 @@ body{
 	height: 20px;
 	border: 2px solid white;
 	border-radius: 50%;
-	position: absolute;
-	transition: transform 150ms, width 150ms, height 150ms, border-radius 150ms;
+	position: fixed;
+	
 	
 }
 
