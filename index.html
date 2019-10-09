@@ -23,56 +23,38 @@
 
 	<body>
 		<div id="landing" class="page activePage" data-red="32" data-green="35" data-blue="33">
-			<h1 id="guacTitle">güac</h1>
-			<div id="navbar">
-				<div id="landingBubble" class="navBubble">
-					<div id="landingTip" class="navTip notVisibleTip">
-						Home
-					</div>
-					<div id="landingButton" class="navButton hoverable" onclick="scrollTo()" >
+			<div class="pt-5 mt-5">
+				<h1 id="guacTitle" class="py-5 mt-5">güac</h1>
+			</div>
+			
+			<div id="navbar" class="row justify-content-center mt-5">
+				
+					<div id="landingButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Home">
 						<!--Background image of avo-->
 					</div>
-				</div>
-				<div id="splitBubble" class="navBubble">
-					<div id="splitTip" class="navTip notVisibleTip">
-						Split
-					</div>
-					<div id="splitButton" class="navButton hoverable" onclick="scrollTo()" >
+				
+				
+					<div id="splitButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Split">
 						<!--Background image space-->
 					</div>
-				</div>
-				<div id="friendCircleBubble" class="navBubble">
-					<div id="friendCircleTip" class="navTip notVisibleTip">
-						The Friend Circle
-					</div>
-					<div id="friendCircleButton" class="navButton hoverable" onclick="scrollTo()" >
+				
+					<div id="friendCircleButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="The Friend Circle">
 						<!--Background image fire embers-->
 					</div>
-				</div>
-				<div id="infographicBubble" class="navBubble">
-					<div id="inforgraphicTip" class="navTip notVisibleTip">
-						The Straight Scoop
-					</div>
-					<div id="inforgraphicButton" class="navButton hoverable" onclick="scrollTo()" >
+				
+					<div id="inforgraphicButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="The Straight Scoop">
 						<!--Background image ice cream-->
 					</div>
-				</div>
-				<div id="lyricVideosBubble" class="navBubble">
-					<div id="lyricVideosTip" class="navTip notVisibleTip">
-						Heaven & Mama
-					</div>
-					<div id="lyricVideosButton" class="navButton hoverable" onclick="scrollTo()" >
+				
+					<div id="lyricVideosButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Heaven & Mama">
 						<!--Background image heaven/hell-->
 					</div>
-				</div>
-				<div id="hopmanBubble" class="navBubble">
-					<div id="hopmanTip" class="navTip notVisibleTip">
-						Hopman Brewery
-					</div>
-					<div id="hopmanButton" class="navButton hoverable" onclick="scrollTo()" >
+				
+					<div id="hopmanButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Hopman Brewery">
 						<!--Background image beer bubbles-->
 					</div>
-				</div>
+				
+
 			</div>
 			
 		</div>
@@ -88,7 +70,9 @@
 				<div></div>
 				<div></div>
 			</div>
-			<h1 id="splitTitle">Split</h1>
+			<div class="pt-5">
+				<h1 id="splitTitle" class="py-5">Split</h1>
+			</div>
 
 			<div id="splitAbout" class="hoverable pageElement">About</div>
 			<div id="splitTeam" class="hoverable pageElement">The Team</div>
@@ -106,7 +90,9 @@
 				<div></div>
 				<div></div>
 			</div>
-			<h1 id="friendCircleTitle">The Friend Circle</h1>
+			<div class="pt-5">
+				<h1 id="friendCircleTitle" class="py-5">The Friend Circle</h1>
+			</div>
 
 			<div id="friendAbout" class="hoverable pageElement">About</div>
 			<div id="friendTrailer" class="hoverable pageElement">Trailer</div>
@@ -124,7 +110,9 @@
 				<div></div>
 				<div></div>
 			</div>
-			<h1 id="infographicTitle">The Straight Scoop On Ice Cream</h1>
+			<div class="pt-5">
+				<h1 id="infographicTitle" class="py-5">The Straight Scoop On Ice Cream</h1>
+			</div>
 
 			<div id="infographicAbout" class="hoverable pageElement">About</div>
 			<div id="infographicTeam" class="hoverable pageElement">The Team</div>
@@ -135,7 +123,9 @@
 
 			<!-- HEAVEN -->
 			<div id="heaven" class="col-6">
-				<h1 id="heavenTitle">HEAVEN</h1>
+				<div class="pt-5">
+					<h1 id="heavenTitle" class="py-5">HEAVEN</h1>
+				</div>
 
 				<div id="heavenAbout" class="hoverable pageElement">About</div>
 				<div id="heavenTeam" class="hoverable pageElement">The Team</div>
@@ -144,7 +134,9 @@
 
 			<!-- MAMA -->
 			<div id="mama" class="col-6">
-				<h1 id="mamaTitle">MAMA</h1>
+				<div class="pt-5">
+					<h1 id="mamaTitle" class="py-5">MAMA</h1>
+				</div>
 
 				<div id="mamaAbout" class="hoverable pageElement">About</div>
 				<div id="mamaTeam" class="hoverable pageElement">The Team</div>
@@ -163,7 +155,10 @@
 				<div></div>
 				<div></div>
 			</div>
-			<h1 id="hopmanTitle">Hopman Brewery</h1>
+			<div class="pt-5">
+				<h1 id="hopmanTitle" class="py-5">Hopman Brewery</h1>
+			</div>
+
 			<div id="oneFineBlonde" class="hoverable pageElement"></div>
 			<div id="smokeyOke" class="hoverable pageElement"></div>
 			<div id="quay49" class="hoverable pageElement"></div>
@@ -186,6 +181,7 @@
 		</script>
 
 		<!-- script -->
+		<script src="js/bootstrap.bundle.js"></script>
 		<script src="js/jqueryMigrate.js"></script>
 		<script src="js/jquery.color-2.1.2.min.js"></script>
 		<script src="js/script.js"></script>
