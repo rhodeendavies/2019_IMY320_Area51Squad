@@ -10,6 +10,7 @@ $(()=>{
 	let lastScrollTop = $(window).scrollTop();
 	let oldActive = $('.activePage');
 
+
 	//scroll
 
 	$.fn.isInViewport = function() {
@@ -22,7 +23,7 @@ $(()=>{
 		return elementBottom > viewportTop && elementTop < viewportBottom;
 	};
 
-	function changeActivePage(){
+	function scrollAnimation(){
 		if (lastScrollTop < $(window).scrollTop()){
 			if (!$('.activePage').isInViewport()){
 				
@@ -40,49 +41,48 @@ $(()=>{
 			}
 		}
 		let otherPage;
+		//calculate distance between two pages, based on which pages are in view
 		if (oldActive.next().isInViewport())
 			otherPage = oldActive.next();
 		else
 			otherPage = oldActive.prev();
 
+
+		//get color changing from and to in array [red, green, blue]
 		let oldActiveColor = [oldActive.attr('data-red'), 
-						oldActive.attr('data-green'), 
-						oldActive.attr('data-blue')];
+							oldActive.attr('data-green'), 
+							oldActive.attr('data-blue')];
+							
 		let otherPageColor = [otherPage.attr('data-red'), 
-						otherPage.attr('data-green'), 
-						otherPage.attr('data-blue')];
+							otherPage.attr('data-green'), 
+							otherPage.attr('data-blue')];
+
+		let newColor = [(oldActiveColor[0] - otherPageColor[0]),
+						(oldActiveColor[1] - otherPageColor[1]),
+						(oldActiveColor[2] - otherPageColor[2]),]
 
 		let percentToNextPage;
+		//if active page is above the other page
 		if (oldActive.offset().top < otherPage.offset().top){
-			percentToNextPage = otherPage.offset().top - $(window).scrollTop();
-			percentToNextPage = percentToNextPage/ $(window).height() * 100;
-			newColor = [(oldActiveColor[0] - otherPageColor[0]) * (100 - percentToNextPage)/ 100,
-						(oldActiveColor[1] - otherPageColor[1]) * (100 - percentToNextPage)/ 100,
-						(oldActiveColor[2] - otherPageColor[2]) * (100 - percentToNextPage)/ 100,]
+			percentToNextPage = (otherPage.offset().top - $(window).scrollTop())/ $(window).height() * 100;
+			newColor.forEach((item, index) => {
+				newColor[index] = item * (100 - percentToNextPage)/ 100;
+			});
+			
+		//otherwise the other page is above the active page
+		} else {
+			percentToNextPage = -1* ($(window).scrollTop() - oldActive.offset().top)/ $(window).height() * 100;
+			newColor.forEach((item, index) => {
+				newColor[index] = item * percentToNextPage/ 100;
+			});
 		}
-		else{
-			percentToNextPage = oldActive.offset().top - $(window).scrollTop();
-			percentToNextPage = percentToNextPage/ $(window).height() * 100;
-			newColor = [(otherPageColor[0] - oldActiveColor[0]) * (100 - percentToNextPage)/ 100,
-						(otherPageColor[1] - oldActiveColor[1]) * (100 - percentToNextPage)/ 100,
-						(otherPageColor[2] - oldActiveColor[2]) * (100 - percentToNextPage)/ 100,]
-		}
-
-		let oldColor = $('html').css('background-color');
-		oldColor = oldColor.substr(4, oldColor.length - 5).split(',');
-
-		console.log(oldColor[0]);
-		console.log(newColor[0]);
-		console.log(percentToNextPage);
-		console.log(parseFloat(oldColor[0]) - newColor[0]);
-
 
 		$('html, body').css("background-color", `rgb(${oldActiveColor[0] - newColor[0]},${oldActiveColor[1] - newColor[1]},${oldActiveColor[2] - newColor[2]})`);
 		lastScrollTop = $(window).scrollTop();
 		
 	}
 
-	$(window).on('scroll', changeActivePage);
+	$(window).on('scroll', scrollAnimation);
 
 
 	//parallax effect
