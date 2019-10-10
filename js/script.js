@@ -1,4 +1,17 @@
-$(()=>{
+$('body div:not(#loader)').css('display', 'none');
+
+
+
+$(window).on("load", () => {
+
+	$('#loader').css('background-image', 'url("../media/images/loadingAvo.gif")');
+
+	setTimeout(() => {
+		$('body div').removeAttr('style');
+	
+		$('#loader').css('display', 'none');
+  	
+	}, 1000);
 
 	$(window).scrollTop(0);
 
@@ -247,8 +260,9 @@ $(()=>{
 
 
 
-	$('#contact').on('click', () => {
-		console.log("hi")
+	$('#contact').on('click', contactClick);
+
+	function contactClick(){
 		$(window).on('mousemove', parallax);
 		$(window).on('mousemove', followMouse);
 		offsetX = 10;
@@ -263,10 +277,10 @@ $(()=>{
 		$('#contact').removeClass('hoverable');
 		$('#contact').removeClass('navButton');
 		$('#contactContent').removeClass('contactContentHidden');
-	});
+		$('#contact').off('click')
+	}
 
 	$('#contactExit').on('click', () => {
-		console.log("hi")
 		$(window).on('mousemove', parallax);
 		$(window).on('mousemove', followMouse);
 		offsetX = 10;
@@ -281,6 +295,11 @@ $(()=>{
 		$('#contact').addClass('hoverable');
 		$('#contact').addClass('navButton');
 		$('#contactContent').addClass('contactContentHidden');
+		
+		setTimeout(() => {
+			$('#contact').on('click', contactClick);
+		}, 2000)
+		
 	});
 
 	

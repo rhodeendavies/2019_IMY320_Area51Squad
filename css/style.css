@@ -55,7 +55,7 @@ body{
 }
 
 .cursor{
-	z-index: 101;
+	z-index: 200;
 	pointer-events: none;
 	width: 20px;
 	height: 20px;
@@ -238,7 +238,10 @@ body{
 
 /* the friend circle */
 #friendCircle{
-	
+	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 75%, 50% 75%;
+	background-size: 500px 500px, 1000px 500px;
 }
 
 
@@ -251,7 +254,7 @@ body{
 }
 
 
-#friendAbout, #friendTrailer, #friendTeam
+#friendCircleAbout, #friendCircleTrailer, #friendCircleTeam
 {
 	color: #cccccc;
 	font-family: Lapidary;	
@@ -259,7 +262,7 @@ body{
 }
 
 
-#friendAbout
+#friendCircleAbout
 {
 	position: relative;
 	top: 50%;
@@ -267,7 +270,7 @@ body{
 }
 
 
-#friendTrailer
+#friendCircleTrailer
 {
 	position: relative;
 	top: 45%;
@@ -275,7 +278,7 @@ body{
 }
 
 
-#friendTeam
+#friendCircleTeam
 {
 	position: relative;
 	left: 20%;
@@ -517,14 +520,15 @@ body{
 
 #contact{
 	position: fixed;
+	z-index: 150;
 	background-color: #323531;
 	top: -50px;
 	right: -50px;
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	border-radius: 100%;
 	background-image: url('../media/images/contact.png');
-	background-size: 100px 100px;
+	background-size: 60px 60px;
 	background-repeat: no-repeat;
 	background-position: 30% 70%;
 	transition: all 0.5s;
@@ -545,7 +549,7 @@ body{
 	width: 100% !important;
 	height: 100% !important;
 	border-radius: 0px !important;
-	background-image: url('../media/images/contactExit.png') !important;
+	background-image: url('') !important;
 	z-index: 100;
 }
 
@@ -572,14 +576,25 @@ a:hover{
 #contactExit{
 	position: fixed;
 	background-color: #323531;
-	top: -50px;
-	right: -50px;
-	width: 200px;
-	height: 200px;
+	top: -25px;
+	right: -25px;
+	width: 100px;
+	height: 100px;
 	border-radius: 100%;
 	background-image: url('../media/images/contactExit.png');
-	background-size: 100px 100px;
+	background-size: 50px 50px;
 	background-repeat: no-repeat;
 	background-position: 30% 70%;
 	transition: all 0.5s;
+}
+
+#loader{
+	position: fixed;
+	width: 10%;
+	height: 25%;
+	left: 45%;
+	top: 45%;
+	background-image: url('../media/images/loadingPip.gif');
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
