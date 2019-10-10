@@ -598,3 +598,7 @@ a:hover{
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
+
+.containerHidden{
+	display: none;
+}

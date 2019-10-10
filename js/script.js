@@ -1,13 +1,10 @@
-$('body div:not(#loader)').css('display', 'none');
-
-
 
 $(window).on("load", () => {
 
-	$('#loader').css('background-image', 'url("../media/images/loadingAvo.gif")');
+	$('#loader').css('background-image', 'url("media/images/loadingAvo.gif")');
 
 	setTimeout(() => {
-		$('body div').removeAttr('style');
+		$('.containerHidden').removeClass('containerHidden');
 	
 		$('#loader').css('display', 'none');
   	
