@@ -1,4 +1,8 @@
 $(()=>{
+
+	$(window).scrollTop(0);
+
+	$(window).on('mousemove', () => {$('body').tooltip({selector: '[data-toggle=tooltip]'})});
 	
 	//scroll needs cursor details
 	const cursor = $('.cursor');
@@ -8,16 +12,9 @@ $(()=>{
 	let offsetY = 10;
 
 	let lastScrollTop = $(window).scrollTop();
-	let oldActive = $('.activePage');
+	let activePage = $('.activePage');
 
-	$(window).scrollTop(0);
-
-
-	 $('[data-toggle="tooltip"]').tooltip();
-	
-
-	const leftValue = parseFloat($('#split .leftFG').css('left').substr(0, $('#split .leftFG').css('left').length - 2));
-	const rightValue = parseFloat($('#split .rightFG').css('right').substr(0, $('#split .rightFG').css('right').length - 2));
+	let sideNav = false;
 
 
 	//is element in viewport
@@ -33,110 +30,122 @@ $(()=>{
 
 	//scroll
 	function scrollAnimation(){
-		if (!$('.activePage').isInViewport()){
-			oldActive.removeClass('activePage');
-			oldActive.find('leftFG').removeClass('leftFGActive');
-			oldActive.find('rightFG').removeClass('rightFGActive');
-
-			if (lastScrollTop < $(window).scrollTop())
-				oldActive.next().addClass('activePage');
-			else
-				oldActive.prev().addClass('activePage');
-
-			oldActive = $('.activePage');
-			oldActive.find('leftFG').addClass('leftFGActive');
-			oldActive.find('rightFG').addClass('rightFGActive');	
-		}
-
-
 
 		let otherPage;
 		//calculate distance between two pages, based on which pages are in view
-		if (oldActive.next().isInViewport())
-			otherPage = oldActive.next();
+		if (activePage.next().isInViewport() && activePage.next().hasClass('page'))
+			otherPage = activePage.next();
+		else if (activePage.prev().hasClass('page'))
+			otherPage = activePage.prev();
 		else
-			otherPage = oldActive.prev();
+			otherPage = activePage.next();
 
-		//COLOR
+		console.log(otherPage.attr('id'))
+
+
+		//******************COLOR*******************************//
 		//get color changing from and to in array [red, green, blue]
-		let oldActiveColor = [oldActive.attr('data-red'), 
-							oldActive.attr('data-green'), 
-							oldActive.attr('data-blue')];
+		let activePageColor = [activePage.attr('data-red'), 
+							activePage.attr('data-green'), 
+							activePage.attr('data-blue')];
 							
 		let otherPageColor = [otherPage.attr('data-red'), 
 							otherPage.attr('data-green'), 
 							otherPage.attr('data-blue')];
 
-		let newColor = [(oldActiveColor[0] - otherPageColor[0]),
-						(oldActiveColor[1] - otherPageColor[1]),
-						(oldActiveColor[2] - otherPageColor[2]),]
+		let newColor = [(activePageColor[0] - otherPageColor[0]),
+						(activePageColor[1] - otherPageColor[1]),
+						(activePageColor[2] - otherPageColor[2]),]
 
 		let percentToNextPage;
 		//if active page is above the other page
-		if (oldActive.offset().top < otherPage.offset().top)
+		if (activePage.offset().top < otherPage.offset().top)
 			percentToNextPage = 100 - (otherPage.offset().top - $(window).scrollTop())/ $(window).height() * 100;
 		//otherwise the other page is above the active page
 		else 
-			percentToNextPage = -1* ($(window).scrollTop() - oldActive.offset().top)/ $(window).height() * 100;
+			percentToNextPage = -1* ($(window).scrollTop() - activePage.offset().top)/ $(window).height() * 100;
 
 		newColor.forEach((item, index) => {
 			newColor[index] = item * percentToNextPage/ 100;
 		});
 
-		$('html, body').css("background-color", `rgb(${oldActiveColor[0] - newColor[0]},${oldActiveColor[1] - newColor[1]},${oldActiveColor[2] - newColor[2]})`);
+		$('html, body').css("background-color", `rgb(${activePageColor[0] - newColor[0]},${activePageColor[1] - newColor[1]},${activePageColor[2] - newColor[2]})`);
+		//////////////////////////////////////////////////////////////
 
-		console.log(percentToNextPage)
 
+		//*******************PARALLAX AND ACTIVE PAGE******************************//
+		let leftValue = parseFloat($('#split .leftFG').css('left').substr(0, $('#split .leftFG').css('left').length - 2));
+		let rightValue = parseFloat($('#split .rightFG').css('right').substr(0, $('#split .rightFG').css('right').length - 2));
 
-		//PARALLAX
-		if (percentToNextPage > 20){
+		if (percentToNextPage < 85){
 			if (otherPage.find('.leftFG').length){
 				let leftFG = otherPage.find('.leftFG');
 				let rightFG = otherPage.find('.rightFG');
 				
-				leftFG.css('left', `${leftValue - (leftValue * percentToNextPage/ 100)}px`);
-				rightFG.css('right', `${rightValue - (rightValue * percentToNextPage/ 100)}px`);
-				
-				leftFG.css('transform', `rotate(${-20 - (-20 * percentToNextPage/ 100)}deg)`);
-				rightFG.css('transform', `rotate(${20 - (20 * percentToNextPage/ 100)}deg)`);				
+				leftFG.css({
+					'left': `${leftValue - (leftValue * percentToNextPage/ 100)}px`
+				});
+				rightFG.css({
+					'right': `${rightValue - (rightValue * percentToNextPage/ 100)}px`
+				});
 			}
 
-			leftFG = oldActive.find('.leftFG');
-			rightFG = oldActive.find('.rightFG');
-			
+			if (percentToNextPage > 35)
+				activePage.find('.foreGround').removeClass('activeParallax');
+			else
+				activePage.find('.foreGround').addClass('activeParallax');
+
+			leftFG = activePage.find('.leftFG');
+			rightFG = activePage.find('.rightFG');
+
 			leftFG.css('left', `${leftValue * percentToNextPage/ 100}px`);
 			rightFG.css('right', `${rightValue * percentToNextPage/ 100}px`);
 
-			leftFG.css('transform', `rotate(${-20 * percentToNextPage/ 100}deg)`);
-			rightFG.css('transform', `rotate(${20 * percentToNextPage/ 100}deg)`);		
+			leftFG.find('div').removeAttr('style');
+			rightFG.find('div').removeAttr('style');
 
 		} else {
-			if (otherPage.find('.leftFG').length){
-				let leftFG = otherPage.find('.leftFG');
-				let rightFG = otherPage.find('.rightFG');
-				
-				leftFG.css('left', `${leftValue}px`);
-				rightFG.css('right', `${rightValue}px`);
-				
-				leftFG.css('transform', `rotate(-20deg)`);
-				rightFG.css('transform', `rotate(20deg)`);				
+
+			activePage.removeClass('activePage');
+			leftFG = activePage.find('.leftFG');
+			rightFG = activePage.find('.rightFG');
+
+			leftFG.removeClass('leftFGActive');
+			rightFG.removeClass('rightFGActive');
+
+			leftFG.removeAttr('style');
+			rightFG.removeAttr('style');
+
+			if (otherPage.length){
+				otherPage.addClass('activePage');
+				if (otherPage.find('.leftFG').length){
+					let leftFG = otherPage.find('.leftFG');
+					let rightFG = otherPage.find('.rightFG');
+					
+					leftFG.removeAttr('style');
+					rightFG.removeAttr('style');
+
+					leftFG.addClass('leftFGActive activeParallax');
+					rightFG.addClass('rightFGActive activeParallax');
+					
+				}
+
+				otherPage = activePage;
+			} else {
+				activePage.addClass('activePage');
 			}
 
-			leftFG = oldActive.find('.leftFG');
-			rightFG = oldActive.find('.rightFG');
-			
-			leftFG.css('left', `0px`);
-			rightFG.css('right', `0px`);
+			activePage = $('.activePage');
 
-			leftFG.css('transform', `rotate(0deg)`);
-			rightFG.css('transform', `rotate(0deg)`);		
 		}
 
 		
-		
-		
 
-
+		if (activePage.attr('id') == 'landing' && (percentToNextPage > 99 || percentToNextPage < 20))
+			sideNav = false;
+		else
+			sideNav = true;
+		/////////////////////////////////////////////////////////////
 
 		lastScrollTop = $(window).scrollTop();
 		
@@ -158,7 +167,7 @@ $(()=>{
 		currentY = e.pageY; 
 		
 		$('.activeParallax div').each(function(i, el) {
-			let movementConstant = i % 2 == 0 ? .015 : 0.03;
+			let movementConstant = i % 2 == 0 ? 0.01 : 0.02;
 			let movementx = (i + 2) * (xdiff * movementConstant);
 			let movementy = (i + 2) * (ydiff * movementConstant);
 			let newX = $(el).position().left + movementx;
@@ -229,7 +238,37 @@ $(()=>{
 			'transition': ''
 		});
 
-	})
+	});
+
+	$('.navButton').on('click', e => {
+		
+		let target = $(`#${e.target.id}`).attr('data-target');
+		$(window).scrollTop($(`#${target}`).offset().top);
+		activePage.removeClass('activePage');
+		activePage = $(`#${target}`);
+		activePage.addClass('activePage');
+	});
+
+	$('.pageElement').on('mouseover', e => {
+		$(`#${e.target.id}`).parent().css('background-image', 
+			`url(media/images/${e.target.id}.png), 
+			url(media/images/${$(`#${e.target.id}`).parent().attr('id')}MiddleBack.png)`);
+	});
+
+	$('.pageElement').on('mouseleave', e => {
+		$(`#${e.target.id}`).parent().removeAttr('style');
+	});
+
+
+	$(window).on('scroll', () => {
+		if (sideNav){
+			$('#navbar').addClass('sideNav');
+			$('.navButton').attr('data-placement', 'left');
+		} else {
+			$('#navbar').removeClass('sideNav');
+			$('.navButton').attr('data-placement', 'top');
+		}
+	});
 
 	
 

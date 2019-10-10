@@ -14,6 +14,12 @@
 
 @font-face
 {
+	font-family: 'Lapidary';
+	src: url('../fonts/Lapidary_333_Regular.otf');
+}
+
+@font-face
+{
 	font-family: 'HeroLight';
 	src: url('../fonts/Hero_Light.otf');
 }
@@ -88,6 +94,7 @@ body{
 	width: 100%; 
 	padding-bottom: 10%; 
 	overflow-x: hidden;
+	transition: background-image 0.4s ease-in-out;
 }
 
 .pageElement{
@@ -114,7 +121,7 @@ body{
 	height: 100%;
 	width: 80%;
 	position: absolute;
-	background-color: #a9a9a973;
+	
 }
 
 .rightFG div{
@@ -123,29 +130,33 @@ body{
 
 .leftFG{
 	left: -50%;
-	transform: rotate(-20deg);
 }
 
 .rightFG{
 	right: -50%;
-	transform: rotate(20deg);
 }
 
 .leftFGActive{
-	left: 0%;
-	transform: rotate(0deg);
+	left: -2%;
 }
 
 .rightFGActive{
-	right: 0%;
-	transform: rotate(0deg);
+	right: -2%;
 }
 
+.text{
+	position: fixed;
+	width: 50%;
+	height: 50%;
+	top: 25%;
+	left: 25%;
+	background-color: blue;
+}
 
 
 /* landing page */
 #landing{
-
+	height: 100%;
 }
 
 
@@ -163,15 +174,32 @@ body{
 
 /* split */
 #split{
-
+	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 75%, 50% 75%;
+	background-size: 500px 500px, 1000px 500px;
 }
 
+#split .leftFG img{
+	position: relative;
+	top: -15%;
+	left: -15%;
+	height: 120%;
+}
+
+#split .rightFG img{
+	position: relative;
+	float: right;
+	top: -15%;
+	right: -15%;
+	height: 120%;
+}
 
 #splitTitle
 {
-	color: black;
+	color: white;
 	font-family: GeoSans;
-	font-size: 85px;
+	font-size: 96px;
 	text-align: center;
 }
 
@@ -188,7 +216,7 @@ body{
 {
 	position: relative;
 	top: 6%;
-	left: 24%;
+	left: 29%;
 }
 
 
@@ -217,7 +245,7 @@ body{
 #friendCircleTitle
 {
 	color: #f9f9f9;
-	font-family: OpenSans;
+	font-family: Lapidary;
 	font-size: 80px;
 	text-align: center;
 }
@@ -226,7 +254,7 @@ body{
 #friendAbout, #friendTrailer, #friendTeam
 {
 	color: #cccccc;
-	font-family: OpenSans;	
+	font-family: Lapidary;	
 	background-color: #3e7089;
 }
 
@@ -250,7 +278,7 @@ body{
 #friendTeam
 {
 	position: relative;
-	left: 65%;
+	left: 20%;
 	top: -10%;
 }
 
@@ -280,7 +308,7 @@ body{
 #infographicAbout
 {
 	position: relative;
-	top: 15%;
+	top: 20%;
 	left: 12%;
 }
 
@@ -289,7 +317,7 @@ body{
 {
 	position: relative;
 	top: 10%;
-	left: 76%;
+	left: 70%;
 }
 
 
@@ -474,42 +502,75 @@ body{
 	height: 25%; 
 	width: 70%;
 	margin: auto;
+	
+	position: fixed;
+	right: 20%;
+	top: 60%;
+	background-color: #00000000;
+	z-index: 99;
+	border-radius: 25px 25px 25px 25px;
 }
 
 .navButton {
-	margin: 0px;
 	height: 100px;
 	width: 100px;
 	border-radius: 100%;
-	transition: all 0.3s;
+	transition: all 0.3s, visibility 0s;
 }
 
 .navButton:hover {
 	transform: scale(1.3);
 }
 
+.sideNav {
+	height: 38% !important;
+	width: 3% !important;
+	margin: auto;
+	position: fixed;
+	right: 0%  !important;
+	top: 23%  !important;
+	background-color: #00000096  !important;
+	z-index: 99;
+	border-radius: 25px 0px 0px 25px  !important;
+	transition: all 0.3s, background-color 2s;
+}
+
+.sideNav .navButton{
+	height: 20px;
+	width: 20px;
+}
+
+.sideNav #landingButton{
+	visibility: visible;
+}
+
 #landingButton{
-	display: none;
-	background-color:  #202321;
+	visibility: hidden;
+	background-color: #202321;
 }
 
 #splitButton {
-	background-color: #c5b8e6;
+	background-image: url('../media/images/splitAni.gif');
+	background-size: 100% 100%;
 }
 
 #friendCircleButton {
-	background-color: #0b0022;
+	background-image: url('../media/images/friendCircleAni.gif');
+	background-size: 100% 100%;
 } 
 
 #inforgraphicButton {
-	background-color: #aed7d3;
+	background-image: url('../media/images/infographicAni.gif');
+	background-size: 100% 100%;
 }
 
 #lyricVideosButton {
-	background-color: white;
+	background-image: url('../media/images/lyricVideosAni.gif');
+	background-size: 100% 100%;
 }
 
 #hopmanButton {
-	background-color: #e6f7ca;
+	background-image: url('../media/images/hopmanAni.gif');
+	background-size: 100% 100%;
 }
 
