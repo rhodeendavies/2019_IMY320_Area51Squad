@@ -40,7 +40,6 @@ $(()=>{
 		else
 			otherPage = activePage.next();
 
-		console.log(otherPage.attr('id'))
 
 
 		//******************COLOR*******************************//
@@ -74,56 +73,27 @@ $(()=>{
 
 
 		//*******************PARALLAX AND ACTIVE PAGE******************************//
-		let leftValue = parseFloat($('#split .leftFG').css('left').substr(0, $('#split .leftFG').css('left').length - 2));
-		let rightValue = parseFloat($('#split .rightFG').css('right').substr(0, $('#split .rightFG').css('right').length - 2));
 
 		if (percentToNextPage < 85){
-			if (otherPage.find('.leftFG').length){
-				let leftFG = otherPage.find('.leftFG');
-				let rightFG = otherPage.find('.rightFG');
-				
-				leftFG.css({
-					'left': `${leftValue - (leftValue * percentToNextPage/ 100)}px`
-				});
-				rightFG.css({
-					'right': `${rightValue - (rightValue * percentToNextPage/ 100)}px`
-				});
-			}
-
 			if (percentToNextPage > 35)
 				activePage.find('.foreGround').removeClass('activeParallax');
 			else
 				activePage.find('.foreGround').addClass('activeParallax');
-
-			leftFG = activePage.find('.leftFG');
-			rightFG = activePage.find('.rightFG');
-
-			leftFG.css('left', `${leftValue * percentToNextPage/ 100}px`);
-			rightFG.css('right', `${rightValue * percentToNextPage/ 100}px`);
-
-			leftFG.find('div').removeAttr('style');
-			rightFG.find('div').removeAttr('style');
-
 		} else {
 
 			activePage.removeClass('activePage');
-			leftFG = activePage.find('.leftFG');
-			rightFG = activePage.find('.rightFG');
+			let leftFG = activePage.find('.leftFG');
+			let rightFG = activePage.find('.rightFG');
 
 			leftFG.removeClass('leftFGActive');
 			rightFG.removeClass('rightFGActive');
 
-			leftFG.removeAttr('style');
-			rightFG.removeAttr('style');
 
 			if (otherPage.length){
 				otherPage.addClass('activePage');
 				if (otherPage.find('.leftFG').length){
-					let leftFG = otherPage.find('.leftFG');
-					let rightFG = otherPage.find('.rightFG');
-					
-					leftFG.removeAttr('style');
-					rightFG.removeAttr('style');
+					leftFG = otherPage.find('.leftFG');
+					rightFG = otherPage.find('.rightFG');
 
 					leftFG.addClass('leftFGActive activeParallax');
 					rightFG.addClass('rightFGActive activeParallax');
@@ -131,6 +101,7 @@ $(()=>{
 				}
 
 				otherPage = activePage;
+
 			} else {
 				activePage.addClass('activePage');
 			}
@@ -210,6 +181,8 @@ $(()=>{
 		let newWidth = ($(e.target).hasClass('navButton') ? $(e.target).width() : $(e.target).width() + 20);
 		let newHeight = ($(e.target).hasClass('navButton') ? $(e.target).height() : $(e.target).height() + 20);
 
+		//newHeight = e.target.id == 'contact' ? newHeight + 25 : newHeight;
+
 		let scale = ($(e.target).hasClass('pageElement') ? 1.1 : 1.3);
 
 		offsetX = newWidth/2;
@@ -241,13 +214,13 @@ $(()=>{
 	});
 
 	$('.navButton').on('click', e => {
-		
 		let target = $(`#${e.target.id}`).attr('data-target');
 		$(window).scrollTop($(`#${target}`).offset().top);
 		activePage.removeClass('activePage');
 		activePage = $(`#${target}`);
 		activePage.addClass('activePage');
 	});
+
 
 	$('.pageElement').on('mouseover', e => {
 		$(`#${e.target.id}`).parent().css('background-image', 
@@ -270,6 +243,44 @@ $(()=>{
 			$('.navButton').attr('data-placement', 'top');
 			$('html').tooltip({selector: '[data-toggle=tooltip]'})
 		}
+	});
+
+
+
+	$('#contact').on('click', () => {
+		console.log("hi")
+		$(window).on('mousemove', parallax);
+		$(window).on('mousemove', followMouse);
+		offsetX = 10;
+		offsetY = 10;
+		cursor.css({
+			'width': '20px',
+			'height': '20px',
+			'border-radius': '50%',
+			'transition': ''
+		});
+		$('#contact').addClass('showContact');
+		$('#contact').removeClass('hoverable');
+		$('#contact').removeClass('navButton');
+		$('#contactContent').removeClass('contactContentHidden');
+	});
+
+	$('#contactExit').on('click', () => {
+		console.log("hi")
+		$(window).on('mousemove', parallax);
+		$(window).on('mousemove', followMouse);
+		offsetX = 10;
+		offsetY = 10;
+		cursor.css({
+			'width': '20px',
+			'height': '20px',
+			'border-radius': '50%',
+			'transition': ''
+		});
+		$('#contact').removeClass('showContact');
+		$('#contact').addClass('hoverable');
+		$('#contact').addClass('navButton');
+		$('#contactContent').addClass('contactContentHidden');
 	});
 
 	

@@ -55,7 +55,7 @@ body{
 }
 
 .cursor{
-	z-index: 99;
+	z-index: 101;
 	pointer-events: none;
 	width: 20px;
 	height: 20px;
@@ -437,65 +437,6 @@ body{
 }
 
 
-#contactImages
-{
-	position: relative;
-	/*background-color: white;*/
-	margin-right: auto;
-	margin-left: auto;
-	width: 200px;
-	text-align: center;
-}
-
-
-#gmailImage
-{
-	width: 70px;
-	margin: 0;
-
-}
-
-
-#whatsappImage
-{
-	width: 100px;
-
-}
-
-
-#contactUs
-{
-	position: relative;
-	left: 10%;
-	height: 445px;
-	width: 300px;
-	float: left;
-	display: inline;
-}
-
-
-#contactUs div
-{
-	margin-bottom: 20px;
-	font-size: 20px;
-}
-
-
-#contactUs a
-{
-	font-size: 17px;
-}
-
-
-#contactYou
-{
-	position: relative;
-	float: left;
-	display: inline;
-	left: 52%;
-}
-
-
 
 /* navbar style */
 #navbar {
@@ -574,3 +515,71 @@ body{
 	background-size: 100% 100%;
 }
 
+#contact{
+	position: fixed;
+	background-color: #323531;
+	top: -50px;
+	right: -50px;
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+	background-image: url('../media/images/contact.png');
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	background-position: 30% 70%;
+	transition: all 0.5s;
+}
+
+#contact:hover {
+	transform: scale(1.3);
+}
+
+.contactContentHidden{
+	display: none;
+}
+
+
+.showContact{
+	top: 0px !important;
+	right: 0px !important;
+	width: 100% !important;
+	height: 100% !important;
+	border-radius: 0px !important;
+	background-image: url('../media/images/contactExit.png') !important;
+	z-index: 100;
+}
+
+.showContact:hover{
+	transform: scale(1) !important;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	text-decoration: none;
+	color: white;
+	transform: scale(1.2);
+}
+
+.contactDetail{
+	border-radius: 10px;
+	background-color: #202321;
+}
+
+#contactExit{
+	position: fixed;
+	background-color: #323531;
+	top: -50px;
+	right: -50px;
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+	background-image: url('../media/images/contactExit.png');
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	background-position: 30% 70%;
+	transition: all 0.5s;
+}
