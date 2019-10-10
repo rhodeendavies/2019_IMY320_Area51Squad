@@ -2,7 +2,7 @@ $(()=>{
 
 	$(window).scrollTop(0);
 
-	$(window).on('mousemove', () => {$('body').tooltip({selector: '[data-toggle=tooltip]'})});
+	$(window).on('mousemove', () => {$('html').tooltip({selector: '[data-toggle=tooltip]'})});
 	
 	//scroll needs cursor details
 	const cursor = $('.cursor');
@@ -264,14 +264,15 @@ $(()=>{
 		if (sideNav){
 			$('#navbar').addClass('sideNav');
 			$('.navButton').attr('data-placement', 'left');
+			$('html').tooltip({selector: '[data-toggle=tooltip]'})
 		} else {
 			$('#navbar').removeClass('sideNav');
 			$('.navButton').attr('data-placement', 'top');
+			$('html').tooltip({selector: '[data-toggle=tooltip]'})
 		}
 	});
 
 	
 
 });
-
 
