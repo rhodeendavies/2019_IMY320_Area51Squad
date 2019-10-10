@@ -22,35 +22,35 @@
 	</head>
 
 	<body>
-		<div id="landing" class="page activePage" data-red="32" data-green="35" data-blue="33">
+		<div id="landing" class="page activePage mb-5" data-red="32" data-green="35" data-blue="33">
 			<div class="pt-5 mt-5">
 				<h1 id="guacTitle" class="py-5 mt-5">güac</h1>
 			</div>
 			
 			<div id="navbar" class="row justify-content-center mt-5">
 				
-					<div id="landingButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Home">
+					<div id="landingButton" class="navButton hoverable m-2" data-target="landing" data-toggle="tooltip" data-placement="top" title="Home">
 						<!--Background image of avo-->
 					</div>
 				
 				
-					<div id="splitButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Split">
+					<div id="splitButton" class="navButton hoverable m-2" data-target="split" data-toggle="tooltip" data-placement="top" title="Split">
 						<!--Background image space-->
 					</div>
 				
-					<div id="friendCircleButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="The Friend Circle">
+					<div id="friendCircleButton" class="navButton hoverable m-2" data-target="friendCircle" data-toggle="tooltip" data-placement="top" title="The Friend Circle">
 						<!--Background image fire embers-->
 					</div>
 				
-					<div id="inforgraphicButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="The Straight Scoop">
+					<div id="inforgraphicButton" class="navButton hoverable m-2" data-target="infographic" data-toggle="tooltip" data-placement="top" title="The Straight Scoop">
 						<!--Background image ice cream-->
 					</div>
 				
-					<div id="lyricVideosButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Heaven & Mama">
+					<div id="lyricVideosButton" class="navButton hoverable m-2" data-target="lyricVideos" data-toggle="tooltip" data-placement="top" title="Heaven & Mama">
 						<!--Background image heaven/hell-->
 					</div>
 				
-					<div id="hopmanButton" class="navButton hoverable mx-2" onclick="scrollTo()" data-toggle="tooltip" data-placement="top" title="Hopman Brewery">
+					<div id="hopmanButton" class="navButton hoverable m-2" data-target="hopman" data-toggle="tooltip" data-placement="top" title="Hopman Brewery">
 						<!--Background image beer bubbles-->
 					</div>
 				
@@ -63,20 +63,30 @@
 		<div id="split" class="page" data-red="197" data-green="184" data-blue="230">
 
 			<div class="foreGround leftFG">
-				<div></div>
-				<div></div>
+				<div>
+					<img src="media/images/splitSide1.png"/>
+				</div>
+				<div>
+					<img src="media/images/splitSide2.png"/>
+				</div>
 			</div>
 			<div class="foreGround rightFG">
-				<div></div>
-				<div></div>
+				<div>
+					<img src="media/images/splitSide3.png"/>
+				</div>
+				<div>
+					<img src="media/images/splitSide4.png"/>
+				</div>
 			</div>
-			<div class="pt-5">
-				<h1 id="splitTitle" class="py-5">Split</h1>
+			<div class="py-5">
+				<h1 id="splitTitle" class="pb-5">Split</h1>
 			</div>
+
+			<!--<div class="middleImage justify-content-center"><img src="media/images/splitMiddle.png"/></div>-->
 
 			<div id="splitAbout" class="hoverable pageElement">About</div>
 			<div id="splitTeam" class="hoverable pageElement">The Team</div>
-			<div id="splitGallery" class="hoverable pageElement">Gallery</div>
+			<div id="splitGallery" class="hoverable pageElement" style="visibility: hidden">Gallery</div>
 		</div>
 
 
@@ -116,6 +126,7 @@
 
 			<div id="infographicAbout" class="hoverable pageElement">About</div>
 			<div id="infographicTeam" class="hoverable pageElement">The Team</div>
+			<div id="splitGallery" class="hoverable pageElement" style="visibility: hidden">Gallery</div>
 		</div>
 
 
@@ -171,10 +182,7 @@
 
 
 		<!-- jQuery CDN-->
-		<script
-		  src="https://code.jquery.com/jquery-3.4.1.min.js"
-		  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-		  crossorigin="anonymous"></script>
+		
 		<!-- jQuery local fallback -->
 		<script>
 			Window.jQuery || document.write("<script src='js/jquery-3.4.1.min.js'><\/script>");
