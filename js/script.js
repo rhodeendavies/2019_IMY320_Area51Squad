@@ -1,5 +1,48 @@
+var images = ['contact.png', 'contactExit.png','contact.png', 'friendCircleAbout.png','friendCircleAni.gif', 'friendCircleTeam.png','hopmanAni.gif', 'infographicAni.gif','loadingAvo.gif', 'loadingPip.gif','lyricVideosAni.gif', 'splitAbout.png','splitAni.gif', 'splitMiddle.png', 'splitMiddleBack.png', 'splitSide1.png','splitSide2.png', 'splitSide3.png', 'splitSide4.png', 'splitTeam.png'];
 
-$(window).on("load", () => {
+
+//Keep track of the images that are loaded
+ 
+//Recursive load function give the callback function you want to fire after all images are loaded
+function _loadimages(imgArr,callback) {
+		//Keep track of the images that are loaded
+		var imagesLoaded = 0;
+		function _loadAllImages(callback){
+			//Create an temp image and load the url
+			var img = new Image();
+			$(img).attr('src',`media/images/${imgArr[imagesLoaded]}`);
+			if (img.complete || img.readyState === 4) {
+				// image is cached
+				imagesLoaded++;
+				//Check if all images are loaded
+				if(imagesLoaded == imgArr.length) {
+					//If all images loaded do the callback
+					callback();
+				} else {
+					//If not all images are loaded call own function again
+					_loadAllImages(callback);
+				}
+			} else {
+				$(img).load(function(){
+					//Increment the images loaded variable
+					imagesLoaded++;
+					//Check if all images are loaded
+					if(imagesLoaded == imgArr.length) {
+						//If all images loaded do the callback
+						callback();
+					} else {
+						//If not all images are loaded call own function again
+						_loadAllImages(callback);
+					}
+				});
+			}
+		};		
+		_loadAllImages(callback);
+	}
+
+//In your other code just go
+_loadimages(images, () => {
+      //Do whatever
 
 	$('#loader').css('background-image', 'url("media/images/loadingAvo.gif")');
 
