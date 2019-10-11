@@ -104,6 +104,7 @@ body{
 	padding: 10px;
 	border-radius: 15px;
 	transition: transform 0.5s;
+	display: table;
 }
 
 .pageElement:hover{
