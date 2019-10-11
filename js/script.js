@@ -297,7 +297,7 @@ _loadimages(images, () => {
 	$('.pageElement').on('mouseover', e => {
 		$(`#${e.target.id}`).parent().css('background-image', 
 			`url(media/images/${e.target.id}.png), 
-			url(media/images/${$(`#${e.target.id}`).parent().attr('id')}MiddleBack.png)`);
+			url(media/images/${$(`#${e.target.id}`).parent().attr('id')}MiddleBack.${$(`#${e.target.id}`).parent().attr('id') == 'friendCircle' ? 'gif' : 'png'})`);
 	});
 
 	$('.pageElement').on('mouseleave', e => {

@@ -237,7 +237,7 @@ body{
 
 /* the friend circle */
 #friendCircle{
-	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-image: url('../media/images/friendCircleMiddle.png'), url('../media/images/friendCircleMiddleBack.gif');
 	background-repeat: no-repeat, no-repeat;
 	background-position: 50% 75%, 50% 75%;
 	background-size: 500px 500px, 1000px 500px;
@@ -369,7 +369,7 @@ body{
 /* mama */
 #mama
 {
-	background-image: url('../media/images/mamaMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-image: url('../media/images/mamaMiddle.png'), url('../media/images/mamaMiddleBack.png');
 	background-repeat: no-repeat, no-repeat;
 	background-position: 50% 75%, 50% 75%;
 	background-size: 400px 400px, 400px 400px;
@@ -411,7 +411,7 @@ body{
 
 /* hopman brewery */
 #hopman{
-	background-image: url('../media/images/hopmanMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-image: url('../media/images/hopmanMiddle.png'), url('../media/images/hopmanMiddleBack.png');
 	background-repeat: no-repeat, no-repeat;
 	background-position: 50% 100%, 50% 100%;
 	background-size: 500px 500px, 1000px 500px;
