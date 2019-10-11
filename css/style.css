@@ -181,14 +181,14 @@ body{
 	background-size: 500px 500px, 1000px 500px;
 }
 
-#split .leftFG img{
+.leftFG img{
 	position: relative;
 	top: -15%;
 	left: -15%;
 	height: 120%;
 }
 
-#split .rightFG img{
+.rightFG img{
 	position: relative;
 	float: right;
 	top: -15%;
@@ -210,29 +210,23 @@ body{
 	color: #f9f9f9;
 	font-family: GeoSans;
 	background-color: #3e7089;
+	position: relative;
 }
 
 
-#splitAbout
-{
-	position: relative;
-	top: 6%;
-	left: 29%;
+#splitAbout {
+	left: 17%;
 }
 
 
 #splitTeam
 {
-	position: relative;
-	top: -10%;
-	left: 64%;
+	left: 70%;
 }
 
 
 #splitGallery
 {
-	position: relative;
-	top: 32%;
 	left: 13%;
 }
 
@@ -259,37 +253,35 @@ body{
 {
 	color: #cccccc;
 	font-family: Lapidary;	
-	background-color: #3e7089;
+	background-color: #080217;
+	position: relative;
 }
 
 
 #friendCircleAbout
 {
-	position: relative;
-	top: 50%;
 	left: 17%;
 }
 
 
 #friendCircleTrailer
 {
-	position: relative;
-	top: 45%;
 	left: 73%;
 }
 
 
 #friendCircleTeam
 {
-	position: relative;
-	left: 20%;
-	top: -10%;
+	left: 15%;
 }
 
 
 /* infographic */
 #infographic{
-
+	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 75%, 50% 75%;
+	background-size: 500px 500px, 1000px 500px;
 }
 
 #infographicTitle
@@ -298,6 +290,8 @@ body{
 	font-family: DKLemonYellowSun;
 	font-size: 5em;
 	text-align: center;
+	width: 60%;
+	margin: auto;
 }
 
 
@@ -305,23 +299,21 @@ body{
 {
 	color: #1f2521;
 	font-family: DKLemonYellowSun;
-	background-color: #3e7089;
+	background-color: #6d9693;
+	position: relative;
+	color: white;
 }
 
 
 #infographicAbout
 {
-	position: relative;
-	top: 20%;
 	left: 12%;
 }
 
 
 #infographicTeam
 {
-	position: relative;
-	top: 10%;
-	left: 70%;
+	left: 75%;
 }
 
 
@@ -330,7 +322,10 @@ body{
 /* heaven */
 #heaven
 {
-	
+	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 75%, 50% 75%;
+	background-size: 250px 250px, 500px 250px;
 }
 
 
@@ -348,20 +343,19 @@ body{
 {
 	color: #fcfcfb;
 	font-family: Arial;
-	background-color: #3e7089;
+	background-color: #a96164;
+	position: relative;
 }
 
 
 #heavenAbout
 {
-	position: relative;
 	top: 40%;
 	left: 7%
 }
 
 #heavenTeam
 {
-	position: relative;
 	top: 21.5%;
 	left: 63%
 }
@@ -370,7 +364,10 @@ body{
 /* mama */
 #mama
 {
-	
+	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 75%, 50% 75%;
+	background-size: 250px 250px, 500px 250px;
 }
 
 
@@ -388,20 +385,19 @@ body{
 {
 	color: #fcfcfb;
 	font-family: Sardonyx;
-	background-color: #3e7089;
+	background-color: #6d2c2e;
+	position: relative;
 }
 
 
 #mamaAbout
 {
-	position: relative;
 	top: 35.5%;
 	left: 7%
 }
 
 #mamaTeam
 {
-	position: relative;
 	top: 16.5%;
 	left: 75%
 }
@@ -409,7 +405,10 @@ body{
 
 /* hopman brewery */
 #hopman{
-	
+	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 75%, 50% 75%;
+	background-size: 500px 500px, 1000px 500px;
 }
 
 
@@ -419,6 +418,26 @@ body{
 	font-family: GeoSans;
 	font-size: 80px;
 	text-align: center;
+	position: relative;
+}
+
+#hopmanAbout, #hopmanTeam
+{
+	color: #fcfcfb;
+	font-family: GeoSans;
+	background-color: #93ad59;
+	position: relative;
+}
+
+#hopmanAbout
+{
+	left: 12%;
+}
+
+
+#hopmanTeam
+{
+	left: 70%;
 }
 
 

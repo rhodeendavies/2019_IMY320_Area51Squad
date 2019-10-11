@@ -290,12 +290,14 @@ _loadimages(images, () => {
 		if (sideNav){
 			$('#navbar').addClass('sideNav');
 			$('.navButton').attr('data-placement', 'left');
-			$('html').tooltip({selector: '[data-toggle=tooltip]'})
+			$('html').tooltip({selector: '[data-toggle=tooltip]'});
+			
 		} else {
 			$('#navbar').removeClass('sideNav');
 			$('.navButton').attr('data-placement', 'top');
-			$('html').tooltip({selector: '[data-toggle=tooltip]'})
+			$('html').tooltip({selector: '[data-toggle=tooltip]'});
 		}
+		
 	});
 
 
