@@ -278,7 +278,7 @@ body{
 
 /* infographic */
 #infographic{
-	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-image: url('../media/images/infographicMiddle.png'), url('../media/images/infographicMiddleBack.png');
 	background-repeat: no-repeat, no-repeat;
 	background-position: 50% 75%, 50% 75%;
 	background-size: 500px 500px, 1000px 500px;
@@ -322,10 +322,11 @@ body{
 /* heaven */
 #heaven
 {
-	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-image: url('../media/images/heavenMiddle.png'), url('../media/images/heavenMiddleBack.png');
 	background-repeat: no-repeat, no-repeat;
 	background-position: 50% 75%, 50% 75%;
-	background-size: 250px 250px, 500px 250px;
+	background-size: 400px 400px, 400px 400px;
+	height: 600px;
 }
 
 
@@ -364,10 +365,11 @@ body{
 /* mama */
 #mama
 {
-	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-image: url('../media/images/mamaMiddle.png'), url('../media/images/splitMiddleBack.png');
 	background-repeat: no-repeat, no-repeat;
 	background-position: 50% 75%, 50% 75%;
-	background-size: 250px 250px, 500px 250px;
+	background-size: 400px 400px, 400px 400px;
+	height: 600px;
 }
 
 
@@ -405,10 +407,11 @@ body{
 
 /* hopman brewery */
 #hopman{
-	background-image: url('../media/images/splitMiddle.png'), url('../media/images/splitMiddleBack.png');
+	background-image: url('../media/images/hopmanMiddle.png'), url('../media/images/splitMiddleBack.png');
 	background-repeat: no-repeat, no-repeat;
-	background-position: 50% 75%, 50% 75%;
+	background-position: 50% 100%, 50% 100%;
 	background-size: 500px 500px, 1000px 500px;
+	height: 700px;
 }
 
 
