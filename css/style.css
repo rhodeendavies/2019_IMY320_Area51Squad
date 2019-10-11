@@ -158,6 +158,10 @@ body{
 /* landing page */
 #landing{
 	height: 100%;
+	background-image: url('../media/images/logo.png');
+	background-repeat: no-repeat;
+	background-position: 20% 50%;
+	background-size: 250px 250px;
 }
 
 

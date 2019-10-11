@@ -1,4 +1,23 @@
-var images = ['contact.png', 'contactExit.png','contact.png', 'friendCircleAbout.png','friendCircleAni.gif', 'friendCircleTeam.png','hopmanAni.gif', 'infographicAni.gif','loadingAvo.gif', 'loadingPip.gif','lyricVideosAni.gif', 'splitAbout.png','splitAni.gif', 'splitMiddle.png', 'splitMiddleBack.png', 'splitSide1.png','splitSide2.png', 'splitSide3.png', 'splitSide4.png', 'splitTeam.png'];
+var images = ['contact.png', 'contactExit.png', 
+
+
+	'friendCircleAbout.png','friendCircleAni.gif', 'friendCircleTeam.png',
+
+	'heavenAbout.png', 'heavenMiddle.png', 'heavenMiddleBack.png', 'heavenTeam.png',
+
+	'hopmanAbout.png', 'hopmanAni.gif', 'hopmanMiddle.png', 'hopmanSide1.png', 'hopmanSide2.png', 'hopmanSide3.png', 'hopmanSide4.png', 'hopmanTeam.png', 
+
+	'infographicAbout.png', 'infographicAni.gif', 'infographicMiddle.png', 'infographicMiddleBack.png', 'infographicSide1.png', 'infographicSide2.png', 'infographicSide3.png', 'infographicSide4.png', 'infographicTeam.png', 
+
+	'loadingAvo.gif', 'loadingPip.gif',
+
+	'logo.png',
+
+	'lyricVideosAni.gif', 
+
+	'mamaAbout.png', 'mamaMiddle.png', 'mamaTeam.png',
+
+	'splitAbout.png','splitAni.gif', 'splitMiddle.png', 'splitMiddleBack.png', 'splitSide1.png','splitSide2.png', 'splitSide3.png', 'splitSide4.png', 'splitTeam.png'];
 
 
 //Keep track of the images that are loaded
