@@ -93,7 +93,7 @@ body{
 {
 	width: 100%; 
 	padding-bottom: 10%; 
-	overflow-x: hidden;
+	overflow: hidden;
 	transition: background-image 0.4s ease-in-out;
 }
 
@@ -299,7 +299,7 @@ body{
 }
 
 
-#infographicAbout, #infographicTeam
+#infographicAbout, #infographicTeam, #infographicPlay
 {
 	color: #1f2521;
 	font-family: DKLemonYellowSun;
@@ -318,6 +318,11 @@ body{
 #infographicTeam
 {
 	left: 75%;
+}
+
+#infographicPlay
+{
+	left: 25%;
 }
 
 
@@ -344,7 +349,7 @@ body{
 }
 
 
-#heavenAbout, #heavenTeam
+#heavenAbout, #heavenTeam, #heavenPlay
 {
 	color: #fcfcfb;
 	font-family: Arial;
@@ -363,6 +368,12 @@ body{
 {
 	top: 21.5%;
 	left: 63%
+}
+
+#heavenPlay
+{
+	top: 21.5%;
+	left: 40%
 }
 
 
@@ -387,7 +398,7 @@ body{
 }
 
 
-#mamaAbout, #mamaTeam
+#mamaAbout, #mamaTeam, #mamaPlay
 {
 	color: #fcfcfb;
 	font-family: Sardonyx;
@@ -406,6 +417,12 @@ body{
 {
 	top: 16.5%;
 	left: 75%
+}
+
+#mamaPlay
+{
+	top: 16.5%;
+	left: 40%
 }
 
 

@@ -88,6 +88,43 @@ _loadimages(images, () => {
 
 	let sideNav = false;
 
+	$(window).on('load, resize', () => {
+		$('.page').height($(window).height())
+	});
+
+	$('#friendCircleTrailer').on('click', () => {
+		var win = window.open('https://www.youtube.com/watch?v=OCgfOJ-KIjg', '_blank');
+		if (win) {
+		    //Browser has allowed it to be opened
+		    win.focus();
+		} else {
+		    //Browser has blocked it
+		    alert('Please allow popups for this website');
+		}
+	});
+
+	$('#heavenPlay').on('click', () => {
+		var win = window.open('https://www.youtube.com/watch?v=O7NhOGZTVEM&feature=youtu.be', '_blank');
+		if (win) {
+		    //Browser has allowed it to be opened
+		    win.focus();
+		} else {
+		    //Browser has blocked it
+		    alert('Please allow popups for this website');
+		}
+	});
+
+	$('#mamaPlay').on('click', () => {
+		var win = window.open('https://youtu.be/afWFgIO2su0', '_blank');
+		if (win) {
+		    //Browser has allowed it to be opened
+		    win.focus();
+		} else {
+		    //Browser has blocked it
+		    alert('Please allow popups for this website');
+		}
+	});
+
 
 	//is element in viewport
 	$.fn.isInViewport = function() {
